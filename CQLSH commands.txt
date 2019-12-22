@@ -1,0 +1,62 @@
+CREATE TABLE User (
+	userUID uuid,
+	userame text,
+	nickname text,
+	password text,
+	avatar text,
+	serverUIDsList list<text>,
+	friendUIDsList list<text>,
+	PRIMARY KEY (uid)
+)
+WITH
+  bloom_filter_fp_chance=0.01
+  AND compaction={ 'class' : 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy' }
+  AND compression={ 'sstable_compression' : 'org.apache.cassandra.io.compress.LZ4Compressor' }
+  AND caching='{"keys":"ALL", "rows_per_partition":"NONE"}';
+
+CREATE TABLE Server (
+	serverUID uuid,
+	name text,
+	password text,
+	userUIDsList list<text>,
+	adminUIDsList list<text>,
+	privateS boolean,
+	creationTime timeuuid,
+	PRIMARY KEY (id)
+)
+WITH
+  bloom_filter_fp_chance=0.01
+  AND compaction={ 'class' : 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy' }
+  AND compression={ 'sstable_compression' : 'org.apache.cassandra.io.compress.LZ4Compressor' }
+  AND caching='{"keys":"ALL", "rows_per_partition":"NONE"}';
+
+CREATE TABLE Chat (
+	chatUID uuid,
+	name text,
+	userUIDsList list<text>,
+	creationTime timeuuid,
+	serverUID text,
+	PRIMARY KEY (id)
+)
+WITH
+  bloom_filter_fp_chance=0.01
+  AND compaction={ 'class' : 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy' }
+  AND compression={ 'sstable_compression' : 'org.apache.cassandra.io.compress.LZ4Compressor' }
+  AND caching='{"keys":"ALL", "rows_per_partition":"NONE"}';
+
+CREATE TABLE Message (
+	messageUID uuid,
+	from text,
+	to text,
+	timeSent timeuuid,
+	timeRead timeuuid,
+	texts text,
+	picture text,
+	chatUID text,
+	PRIMARY KEY (id)
+)
+WITH
+  bloom_filter_fp_chance=0.01
+  AND compaction={ 'class' : 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy' }
+  AND compression={ 'sstable_compression' : 'org.apache.cassandra.io.compress.LZ4Compressor' }
+  AND caching='{"keys":"ALL", "rows_per_partition":"NONE"}';

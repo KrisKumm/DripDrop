@@ -10,7 +10,7 @@ namespace DripDropApi.Models
     public class Message
     {
         public string messageUID { get; set; }
-        public string from { get; set; }
+        public string fromWho { get; set; }
         public DateTime timeSent { get; set; }
         public DateTime timeRead { get; set; }
         public string text { get; set; }

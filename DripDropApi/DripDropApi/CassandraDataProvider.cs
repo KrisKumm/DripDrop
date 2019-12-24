@@ -48,6 +48,8 @@ namespace DripDropApi
                 users.Add(user);
             }
 
+            session.Cluster.Shutdown();
+
             return users;
         }
 
@@ -62,6 +64,8 @@ namespace DripDropApi
             Row userData = session.Execute("select * from User where username='" + username + "'").FirstOrDefault();
 
             UID = userData["userUID"] != null ? userData["userUID"].ToString() : string.Empty;
+
+            session.Cluster.Shutdown();
 
             return UID;
         }
@@ -99,6 +103,8 @@ namespace DripDropApi
                     user.friendUIDsList.Add(string.Empty);
             }
 
+            session.Cluster.Shutdown();
+
             return user;
         }
 
@@ -135,6 +141,8 @@ namespace DripDropApi
                     user.friendUIDsList.Add(string.Empty);
             }
 
+            session.Cluster.Shutdown();
+
             return user;
         }
 
@@ -145,7 +153,9 @@ namespace DripDropApi
             if (session == null)
                 return;
 
-            RowSet userData = session.Execute("insert into User (userUID, username, nickname, password, avatar, serverUIDsList, friendUIDsList) values (uuid(), '" + username + "', '" + nickname + "', '" + password + "', '', [], []");
+            RowSet userData = session.Execute("insert into User (userUID, username, nickname, password, avatar, serverUIDsList, friendUIDsList) values (uuid(), '" + username + "', '" + nickname + "', '" + password + "', '', [], [])");
+
+            session.Cluster.Shutdown();
         }
 
         public static void AddUserAvatar(string userUID, string avatar)
@@ -156,6 +166,8 @@ namespace DripDropApi
                 return;
 
             RowSet userData = session.Execute("update User set avatar='" + avatar + "' where userUID='" + userUID + "'");
+
+            session.Cluster.Shutdown();
         }
 
         public static void AddUserServerUID(string userUID, string serverUID)
@@ -167,6 +179,8 @@ namespace DripDropApi
                 return;
 
             RowSet userData = session.Execute("update User set serverUIDsList = serverUIDsList + ['" + serverUID + "'] where userUID='" + userUID + "'");
+
+            session.Cluster.Shutdown();
         }
 
         public static void AddUserFriendUID(string userUID, string friendUID)
@@ -178,6 +192,8 @@ namespace DripDropApi
                 return;
 
             RowSet userData = session.Execute("update User set friendUIDsList = friendUIDsList + ['" + friendUID + "'] where userUID='" + userUID + "'");
+
+            session.Cluster.Shutdown();
         }
 
         public static void DeleteUserByUsername(string username)
@@ -188,6 +204,8 @@ namespace DripDropApi
                 return;
 
             RowSet userData = session.Execute("delete from User where username='" + username + "'");
+
+            session.Cluster.Shutdown();
         }
 
         public static void DeleteUserByUID(string userUID)
@@ -198,6 +216,8 @@ namespace DripDropApi
                 return;
 
             RowSet userData = session.Execute("delete from User where userUID='" + userUID + "'");
+
+            session.Cluster.Shutdown();
         }
 
         #endregion
@@ -239,6 +259,8 @@ namespace DripDropApi
                 servers.Add(server);
             }
 
+            session.Cluster.Shutdown();
+
             return servers;
         }
 
@@ -253,6 +275,8 @@ namespace DripDropApi
             Row serverData = session.Execute("select * from Server where username='" + name + "'").FirstOrDefault();
 
             UID = serverData["serverUID"] != null ? serverData["serverUID"].ToString() : string.Empty;
+
+            session.Cluster.Shutdown();
 
             return UID;
         }
@@ -290,6 +314,8 @@ namespace DripDropApi
                 server.creationTime = serverData["creationTime"] != null ? (DateTime)serverData["creationTime"] : DateTime.Now;
             }
 
+            session.Cluster.Shutdown();
+
             return server;
         }
 
@@ -300,7 +326,9 @@ namespace DripDropApi
             if (session == null)
                 return;
 
-            RowSet serverData = session.Execute("insert into Server (serverUID, name, password, userUIDsList, adminUIDsList, privateS, creationTime) values (uuid(), '" + name + "', '" + password + "', [], [], '" + privateS + "', now()");
+            RowSet serverData = session.Execute("insert into Server (serverUID, name, password, userUIDsList, adminUIDsList, privateS, creationTime) values (uuid(), '" + name + "', '" + password + "', [], [], '" + privateS + "', now())");
+
+            session.Cluster.Shutdown();
         }
 
         public static void AddServerUserUID(string serverUID, string userUID)
@@ -312,6 +340,8 @@ namespace DripDropApi
                 return;
 
             RowSet serverData = session.Execute("update Server set userUIDsList = userUIDsList + ['" + userUID + "'] where serverUID='" + serverUID + "'");
+
+            session.Cluster.Shutdown();
         }
 
         public static void AddServerAdminUID(string serverUID, string adminUID)
@@ -323,6 +353,8 @@ namespace DripDropApi
                 return;
 
             RowSet serverData = session.Execute("update Server set adminUIDsList = adminUIDsList + ['" + adminUID + "'] where serverUID='" + serverUID + "'");
+
+            session.Cluster.Shutdown();
         }
 
         public static void AddServerPrivate(string serverUID, bool privateS)
@@ -334,6 +366,8 @@ namespace DripDropApi
                 return;
 
             RowSet serverData = session.Execute("update Server set privateS='" + privateS + "' where serverUID='" + serverUID + "'");
+
+            session.Cluster.Shutdown();
         }
 
         public static void DeleteServerByName(string name)
@@ -344,6 +378,8 @@ namespace DripDropApi
                 return;
 
             RowSet serverData = session.Execute("delete from Server where name='" + name + "'");
+
+            session.Cluster.Shutdown();
         }
 
         public static void DeleteServerByUID(string serverUID)
@@ -354,6 +390,8 @@ namespace DripDropApi
                 return;
 
             RowSet serverData = session.Execute("delete from Server where serverUID='" + serverUID + "'");
+
+            session.Cluster.Shutdown();
         }
 
         #endregion
@@ -387,6 +425,8 @@ namespace DripDropApi
                 chats.Add(chat);
             }
 
+            session.Cluster.Shutdown();
+
             return chats;
         }
 
@@ -417,6 +457,8 @@ namespace DripDropApi
                 chats.Add(chat);
             }
 
+            session.Cluster.Shutdown();
+
             return chats;
         }
 
@@ -431,6 +473,8 @@ namespace DripDropApi
             Row chatData = session.Execute("select * from Chat where name='" + name + "'").FirstOrDefault();
 
             UID = chatData["chatUID"] != null ? chatData["chatUID"].ToString() : string.Empty;
+
+            session.Cluster.Shutdown();
 
             return UID;
         }
@@ -460,6 +504,8 @@ namespace DripDropApi
                 chat.serverUID = chatData["serverUID"] != null ? chatData["serverUID"].ToString() : string.Empty;
             }
 
+            session.Cluster.Shutdown();
+
             return chat;
         }
 
@@ -470,7 +516,9 @@ namespace DripDropApi
             if (session == null)
                 return;
 
-            RowSet chatData = session.Execute("insert into Chat (chatUID, name, userUIDsList, creationTime, serverUID) values (uuid(), '" + name + "', [], now(), '" + serverUID + "'");
+            RowSet chatData = session.Execute("insert into Chat (chatUID, name, userUIDsList, creationTime, serverUID) values (uuid(), '" + name + "', [], now(), '" + serverUID + "')");
+
+            session.Cluster.Shutdown();
         }
 
         public static void AddChatUserUID(string chatUID, string userUID)
@@ -482,6 +530,8 @@ namespace DripDropApi
                 return;
 
             RowSet chatData = session.Execute("update Chat set userUIDsList = userUIDsList + ['" + userUID + "'] where chatUID='" + chatUID + "'");
+
+            session.Cluster.Shutdown();
         }
 
         public static void DeleteChatByName(string name)
@@ -492,6 +542,8 @@ namespace DripDropApi
                 return;
 
             RowSet chatData = session.Execute("delete from Chat where name='" + name + "'");
+
+            session.Cluster.Shutdown();
         }
 
         public static void DeleteChatByUID(string chatUID)
@@ -502,6 +554,8 @@ namespace DripDropApi
                 return;
 
             RowSet chatData = session.Execute("delete from Chat where chatUID='" + chatUID + "'");
+
+            session.Cluster.Shutdown();
         }
 
         #endregion
@@ -522,7 +576,7 @@ namespace DripDropApi
             {
                 Message message = new Message();
                 message.messageUID = messageData["messageUID"] != null ? messageData["messageUID"].ToString() : string.Empty;
-                message.from = messageData["from"] != null ? messageData["from"].ToString() : string.Empty;
+                message.fromWho = messageData["fromWho"] != null ? messageData["fromWho"].ToString() : string.Empty;
                 message.timeSent = messageData["timeSent"] != null ? (DateTime)messageData["timeSent"] : DateTime.Now;
                 message.timeRead = messageData["timeRead"] != null ? (DateTime)messageData["timeRead"] : DateTime.Now;
                 message.text = messageData["text"] != null ? messageData["text"].ToString() : string.Empty;
@@ -530,6 +584,8 @@ namespace DripDropApi
                 message.chatUID = messageData["chatUID"] != null ? messageData["chatUID"].ToString() : string.Empty;
                 messages.Add(message);
             }
+
+            session.Cluster.Shutdown();
 
             return messages;
         }
@@ -548,7 +604,7 @@ namespace DripDropApi
             {
                 Message message = new Message();
                 message.messageUID = messageData["messageUID"] != null ? messageData["messageUID"].ToString() : string.Empty;
-                message.from = messageData["from"] != null ? messageData["from"].ToString() : string.Empty;
+                message.fromWho = messageData["fromWho"] != null ? messageData["fromWho"].ToString() : string.Empty;
                 message.timeSent = messageData["timeSent"] != null ? (DateTime)messageData["timeSent"] : DateTime.Now;
                 message.timeRead = messageData["timeRead"] != null ? (DateTime)messageData["timeRead"] : DateTime.Now;
                 message.text = messageData["text"] != null ? messageData["text"].ToString() : string.Empty;
@@ -557,10 +613,12 @@ namespace DripDropApi
                 messages.Add(message);
             }
 
+            session.Cluster.Shutdown();
+
             return messages;
         }
 
-        public static string GetMessageUIDByName(string from, string chatUID)
+        public static string GetMessageUIDByName(string fromWho, string chatUID)
         {
             ISession session = SessionManager.GetSession();
             String UID = "";
@@ -568,9 +626,11 @@ namespace DripDropApi
             if (session == null)
                 return null;
 
-            Row messagesData = session.Execute("select * from Message where from='" + from + "' and chatUID='" + chatUID + "'").FirstOrDefault();
+            Row messagesData = session.Execute("select * from Message where fromWho='" + fromWho + "' and chatUID='" + chatUID + "'").FirstOrDefault();
 
             UID = messagesData["messageUID"] != null ? messagesData["messageUID"].ToString() : string.Empty;
+
+            session.Cluster.Shutdown();
 
             return UID;
         }
@@ -588,7 +648,7 @@ namespace DripDropApi
             if (messageData != null)
             {
                 message.messageUID = messageData["messageUID"] != null ? messageData["messageUID"].ToString() : string.Empty;
-                message.from = messageData["from"] != null ? messageData["from"].ToString() : string.Empty;
+                message.fromWho = messageData["fromWho"] != null ? messageData["fromWho"].ToString() : string.Empty;
                 message.timeSent = messageData["timeSent"] != null ? (DateTime)messageData["timeSent"] : DateTime.Now;
                 message.timeRead = messageData["timeRead"] != null ? (DateTime)messageData["timeRead"] : DateTime.Now;
                 message.text = messageData["text"] != null ? messageData["text"].ToString() : string.Empty;
@@ -596,17 +656,21 @@ namespace DripDropApi
                 message.chatUID = messageData["chatUID"] != null ? messageData["chatUID"].ToString() : string.Empty;
             }
 
+            session.Cluster.Shutdown();
+
             return message;
         }
 
-        public static void AddMessage(string from, string text, string picture, string chatUID)
+        public static void AddMessage(string fromWho, string text, string picture, string chatUID)
         {
             ISession session = SessionManager.GetSession();
 
             if (session == null)
                 return;
 
-            RowSet chatData = session.Execute("insert into Message (messageUID, from, timeSent, timeRead, text, picture, chatUID) values (uuid(), '" + from + "', now(), now(), '" + text + "', '" + picture + "', '" + chatUID + "'");
+            RowSet chatData = session.Execute("insert into Message (messageUID, fromWho, timeSent, timeRead, text, picture, chatUID) values (uuid(), '" + fromWho + "', now(), now(), '" + text + "', '" + picture + "', '" + chatUID + "')");
+
+            session.Cluster.Shutdown();
         }
 
         public static void DeleteMessageByUID(string messageUID)
@@ -617,6 +681,8 @@ namespace DripDropApi
                 return;
 
             RowSet chatData = session.Execute("delete from Message where messageUID='" + messageUID + "'");
+
+            session.Cluster.Shutdown();
         }
 
         #endregion

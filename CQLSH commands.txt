@@ -1,20 +1,26 @@
+0. CQL Create Keyspace ( use same one )
+
+CREATE KEYSPACE DripDrop
+WITH REPLICATION = {'class' : 'SimpleStrategy', 'replication_factor' : 1};
+
+USE DripDrop
+
 1. CQL Create Tables
 
 CREATE TABLE User (
 	userUID uuid,
-	userame text,
+	username text,
 	nickname text,
 	password text,
 	avatar text,
 	serverUIDsList list<text>,
 	friendUIDsList list<text>,
-	PRIMARY KEY (uid)
+	PRIMARY KEY (userUID)
 )
 WITH
   bloom_filter_fp_chance=0.01
   AND compaction={ 'class' : 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy' }
-  AND compression={ 'sstable_compression' : 'org.apache.cassandra.io.compress.LZ4Compressor' }
-  AND caching='{"keys":"ALL", "rows_per_partition":"NONE"}';
+  AND compression={ 'sstable_compression' : 'org.apache.cassandra.io.compress.LZ4Compressor' };
 
 CREATE TABLE Server (
 	serverUID uuid,
@@ -24,13 +30,12 @@ CREATE TABLE Server (
 	adminUIDsList list<text>,
 	privateS boolean,
 	creationTime timeuuid,
-	PRIMARY KEY (id)
+	PRIMARY KEY (serverUID)
 )
 WITH
   bloom_filter_fp_chance=0.01
   AND compaction={ 'class' : 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy' }
-  AND compression={ 'sstable_compression' : 'org.apache.cassandra.io.compress.LZ4Compressor' }
-  AND caching='{"keys":"ALL", "rows_per_partition":"NONE"}';
+  AND compression={ 'sstable_compression' : 'org.apache.cassandra.io.compress.LZ4Compressor' };
 
 CREATE TABLE Chat (
 	chatUID uuid,
@@ -38,76 +43,74 @@ CREATE TABLE Chat (
 	userUIDsList list<text>,
 	creationTime timeuuid,
 	serverUID text,
-	PRIMARY KEY (id)
+	PRIMARY KEY (chatUID)
 )
 WITH
   bloom_filter_fp_chance=0.01
   AND compaction={ 'class' : 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy' }
-  AND compression={ 'sstable_compression' : 'org.apache.cassandra.io.compress.LZ4Compressor' }
-  AND caching='{"keys":"ALL", "rows_per_partition":"NONE"}';
+  AND compression={ 'sstable_compression' : 'org.apache.cassandra.io.compress.LZ4Compressor' };
 
 CREATE TABLE Message (
 	messageUID uuid,
-	from text,
+	fromWho text,
 	timeSent timeuuid,
 	timeRead timeuuid,
 	texts text,
 	picture text,
 	chatUID text,
-	PRIMARY KEY (id)
+	PRIMARY KEY (messageUID)
 )
 WITH
   bloom_filter_fp_chance=0.01
   AND compaction={ 'class' : 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy' }
-  AND compression={ 'sstable_compression' : 'org.apache.cassandra.io.compress.LZ4Compressor' }
-  AND caching='{"keys":"ALL", "rows_per_partition":"NONE"}';
+  AND compression={ 'sstable_compression' : 'org.apache.cassandra.io.compress.LZ4Compressor' };
 
 2. CQL Insert Start Data
 
 User:
-INSERT INTO USER (userUID, username, nickname, password, avatar, serverUIDsList, friendUIDsList) values ('1', 'Kristijan', 'Kris', 'kilic', '', ['1', '2', '3'], ['2', '3']");
-INSERT INTO USER (userUID, username, nickname, password, avatar, serverUIDsList, friendUIDsList) values ('2', 'Milos', 'Miske', 'mstoiljkovic', '', ['2', '3'], ['1', '3']");
-INSERT INTO USER (userUID, username, nickname, password, avatar, serverUIDsList, friendUIDsList) values ('3', 'Julija', 'Jucili', 'jpancic', '', ['1', '3'], ['1', '2']");
+INSERT INTO User (userUID, username, nickname, password, avatar, serverUIDsList, friendUIDsList) values (uuid(), 'Kristijan', 'Kris', 'kilic', '', ['1', '2', '3'], ['2', '3']);
+INSERT INTO User (userUID, username, nickname, password, avatar, serverUIDsList, friendUIDsList) values (uuid(), 'Milos', 'Miske', 'mstoiljkovic', '', ['2', '3'], ['1', '3']);
+INSERT INTO User (userUID, username, nickname, password, avatar, serverUIDsList, friendUIDsList) values (uuid(), 'Julija', 'Jucili', 'jpancic', '', ['1', '3'], ['1', '2']);
 
 Server:
-INSERT INTO USER (serverUID, name, password, userUIDsList, adminUIDsList, privateS, creationTime) values ('1', 'server1', 's1s1', ['1', '2'], ['1'], 'false', now()");
-INSERT INTO USER (serverUID, name, password, userUIDsList, adminUIDsList, privateS, creationTime) values ('2', 'server2', 's2s2', ['1', '3'], ['2'], 'true', now()");
-INSERT INTO USER (serverUID, name, password, userUIDsList, adminUIDsList, privateS, creationTime) values ('3', 'server3', 's3s3', ['1', '2', '3'], ['3'], 'false', now()");
+INSERT INTO Server (serverUID, name, password, userUIDsList, adminUIDsList, privateS, creationTime) values (uuid(), 'server1', 's1s1', ['1', '2'], ['1'], false, now());
+INSERT INTO Server (serverUID, name, password, userUIDsList, adminUIDsList, privateS, creationTime) values (uuid(), 'server2', 's2s2', ['1', '3'], ['2'], true, now());
+INSERT INTO Server (serverUID, name, password, userUIDsList, adminUIDsList, privateS, creationTime) values (uuid(), 'server3', 's3s3', ['1', '2', '3'], ['3'], false, now());
 
 Chat:
-INSERT INTO Chat (chatUID, name, userUIDsList, creationTime, serverUID) values ('1', 'chat1', ['1', '2'], now(), '1');
-INSERT INTO Chat (chatUID, name, userUIDsList, creationTime, serverUID) values ('2', 'chat2', ['1', '3'], now(), '2');
-INSERT INTO Chat (chatUID, name, userUIDsList, creationTime, serverUID) values ('3', 'chat3', ['1', '3'], now(), '2');
-INSERT INTO Chat (chatUID, name, userUIDsList, creationTime, serverUID) values ('4', 'chat4', ['1', '2', '3'], now(), '3');
-INSERT INTO Chat (chatUID, name, userUIDsList, creationTime, serverUID) values ('5', 'chat5', ['2', '3'], now(), '3');
-INSERT INTO Chat (chatUID, name, userUIDsList, creationTime, serverUID) values ('6', 'chat6', ['1', '2'], now(), '3');
+INSERT INTO Chat (chatUID, name, userUIDsList, creationTime, serverUID) values (uuid(), 'chat1', ['1', '2'], now(), '1');
+INSERT INTO Chat (chatUID, name, userUIDsList, creationTime, serverUID) values (uuid(), 'chat2', ['1', '3'], now(), '2');
+INSERT INTO Chat (chatUID, name, userUIDsList, creationTime, serverUID) values (uuid(), 'chat3', ['1', '3'], now(), '2');
+INSERT INTO Chat (chatUID, name, userUIDsList, creationTime, serverUID) values (uuid(), 'chat4', ['1', '2', '3'], now(), '3');
+INSERT INTO Chat (chatUID, name, userUIDsList, creationTime, serverUID) values (uuid(), 'chat5', ['2', '3'], now(), '3');
+INSERT INTO Chat (chatUID, name, userUIDsList, creationTime, serverUID) values (uuid(), 'chat6', ['1', '2'], now(), '3');
 
 Message:
-INSERT INTO Message (messageUID, from, timeSent, timeRead, text, picture, chatUID) values (uuid(), 'Kris', now(), now(), 'Poz', '', '1');
-INSERT INTO Message (messageUID, from, timeSent, timeRead, text, picture, chatUID) values (uuid(), 'Miske', now(), now(), 'Zdravo', '', '1');
-INSERT INTO Message (messageUID, from, timeSent, timeRead, text, picture, chatUID) values (uuid(), 'Kris', now(), now(), 'Sta ima', '', '1');
-INSERT INTO Message (messageUID, from, timeSent, timeRead, text, picture, chatUID) values (uuid(), 'Miske', now(), now(), 'Eo nista', '', '1');
-INSERT INTO Message (messageUID, from, timeSent, timeRead, text, picture, chatUID) values (uuid(), 'Kris', now(), now(), 'Ce radimo projekat?', '', '1');
-INSERT INTO Message (messageUID, from, timeSent, timeRead, text, picture, chatUID) values (uuid(), 'Miske', now(), now(), 'Ofc bate', '', '1');
-INSERT INTO Message (messageUID, from, timeSent, timeRead, text, picture, chatUID) values (uuid(), 'Kris', now(), now(), 'Kada?', '', '1');
-INSERT INTO Message (messageUID, from, timeSent, timeRead, text, picture, chatUID) values (uuid(), 'Miske', now(), now(), 'Sad cu dodjem', '', '1');
-INSERT INTO Message (messageUID, from, timeSent, timeRead, text, picture, chatUID) values (uuid(), 'Kris', now(), now(), 'Ej', '', '2');
-INSERT INTO Message (messageUID, from, timeSent, timeRead, text, picture, chatUID) values (uuid(), 'Jucili', now(), now(), 'Ejj', '', '2');
-INSERT INTO Message (messageUID, from, timeSent, timeRead, text, picture, chatUID) values (uuid(), 'Kris', now(), now(), 'Kako si?', '', '2');
-INSERT INTO Message (messageUID, from, timeSent, timeRead, text, picture, chatUID) values (uuid(), 'Jucili', now(), now(), 'Eo odlicno, ti?', '', '2');
-INSERT INTO Message (messageUID, from, timeSent, timeRead, text, picture, chatUID) values (uuid(), 'Kris', now(), now(), 'Same here!', '', '2');
-INSERT INTO Message (messageUID, from, timeSent, timeRead, text, picture, chatUID) values (uuid(), 'Jucili', now(), now(), 'Ocemo raditi kasandritu?', '', '2');
-INSERT INTO Message (messageUID, from, timeSent, timeRead, text, picture, chatUID) values (uuid(), 'Kris', now(), now(), 'Mogli bi', '', '2');
-INSERT INTO Message (messageUID, from, timeSent, timeRead, text, picture, chatUID) values (uuid(), 'Jucili', now(), now(), 'Krecemo onda', '', '2');
-INSERT INTO Message (messageUID, from, timeSent, timeRead, text, picture, chatUID) values (uuid(), 'Kris', now(), now(), 'Drugarii', '', '4');
-INSERT INTO Message (messageUID, from, timeSent, timeRead, text, picture, chatUID) values (uuid(), 'Miske', now(), now(), 'Sta jeeee', '', '4');
-INSERT INTO Message (messageUID, from, timeSent, timeRead, text, picture, chatUID) values (uuid(), 'Jucili', now(), now(), 'Nistaaa', '', '4');
-INSERT INTO Message (messageUID, from, timeSent, timeRead, text, picture, chatUID) values (uuid(), 'Kris', now(), now(), 'Unosimooo', '', '4');
-INSERT INTO Message (messageUID, from, timeSent, timeRead, text, picture, chatUID) values (uuid(), 'Miske', now(), now(), 'Podaciii', '', '4');
-INSERT INTO Message (messageUID, from, timeSent, timeRead, text, picture, chatUID) values (uuid(), 'Jucili', now(), now(), 'Jakaaa pricaaa', '', '4');
-INSERT INTO Message (messageUID, from, timeSent, timeRead, text, picture, chatUID) values (uuid(), 'Kris', now(), now(), 'Ludnicaaa', '', '4');
-INSERT INTO Message (messageUID, from, timeSent, timeRead, text, picture, chatUID) values (uuid(), 'Miske', now(), now(), 'Kasandritaaaaa', '', '4');
-INSERT INTO Message (messageUID, from, timeSent, timeRead, text, picture, chatUID) values (uuid(), 'Jucili', now(), now(), 'oj kassooo', '', '4');
+INSERT INTO Message (messageUID, fromWho, timeSent, timeRead, texts, picture, chatUID) values (uuid(), 'Kris', now(), now(), 'Poz', '', '1');
+INSERT INTO Message (messageUID, fromWho, timeSent, timeRead, texts, picture, chatUID) values (uuid(), 'Miske', now(), now(), 'Zdravo', '', '1');
+INSERT INTO Message (messageUID, fromWho, timeSent, timeRead, texts, picture, chatUID) values (uuid(), 'Kris', now(), now(), 'Sta ima', '', '1');
+INSERT INTO Message (messageUID, fromWho, timeSent, timeRead, texts, picture, chatUID) values (uuid(), 'Miske', now(), now(), 'Eo nista', '', '1');
+INSERT INTO Message (messageUID, fromWho, timeSent, timeRead, texts, picture, chatUID) values (uuid(), 'Kris', now(), now(), 'Ce radimo projekat?', '', '1');
+INSERT INTO Message (messageUID, fromWho, timeSent, timeRead, texts, picture, chatUID) values (uuid(), 'Miske', now(), now(), 'Ofc bate', '', '1');
+INSERT INTO Message (messageUID, fromWho, timeSent, timeRead, texts, picture, chatUID) values (uuid(), 'Kris', now(), now(), 'Kada?', '', '1');
+INSERT INTO Message (messageUID, fromWho, timeSent, timeRead, texts, picture, chatUID) values (uuid(), 'Miske', now(), now(), 'Sad cu dodjem', '', '1');
+INSERT INTO Message (messageUID, fromWho, timeSent, timeRead, texts, picture, chatUID) values (uuid(), 'Kris', now(), now(), 'Ej', '', '2');
+INSERT INTO Message (messageUID, fromWho, timeSent, timeRead, texts, picture, chatUID) values (uuid(), 'Jucili', now(), now(), 'Ejj', '', '2');
+INSERT INTO Message (messageUID, fromWho, timeSent, timeRead, texts, picture, chatUID) values (uuid(), 'Kris', now(), now(), 'Kako si?', '', '2');
+INSERT INTO Message (messageUID, fromWho, timeSent, timeRead, texts, picture, chatUID) values (uuid(), 'Jucili', now(), now(), 'Eo odlicno, ti?', '', '2');
+INSERT INTO Message (messageUID, fromWho, timeSent, timeRead, texts, picture, chatUID) values (uuid(), 'Kris', now(), now(), 'Same here!', '', '2');
+INSERT INTO Message (messageUID, fromWho, timeSent, timeRead, texts, picture, chatUID) values (uuid(), 'Jucili', now(), now(), 'Ocemo raditi kasandritu?', '', '2');
+INSERT INTO Message (messageUID, fromWho, timeSent, timeRead, texts, picture, chatUID) values (uuid(), 'Kris', now(), now(), 'Mogli bi', '', '2');
+INSERT INTO Message (messageUID, fromWho, timeSent, timeRead, texts, picture, chatUID) values (uuid(), 'Jucili', now(), now(), 'Krecemo onda', '', '2');
+INSERT INTO Message (messageUID, fromWho, timeSent, timeRead, texts, picture, chatUID) values (uuid(), 'Kris', now(), now(), 'Drugarii', '', '4');
+INSERT INTO Message (messageUID, fromWho, timeSent, timeRead, texts, picture, chatUID) values (uuid(), 'Miske', now(), now(), 'Sta jeeee', '', '4');
+INSERT INTO Message (messageUID, fromWho, timeSent, timeRead, texts, picture, chatUID) values (uuid(), 'Jucili', now(), now(), 'Nistaaa', '', '4');
+INSERT INTO Message (messageUID, fromWho, timeSent, timeRead, texts, picture, chatUID) values (uuid(), 'Kris', now(), now(), 'Unosimooo', '', '4');
+INSERT INTO Message (messageUID, fromWho, timeSent, timeRead, texts, picture, chatUID) values (uuid(), 'Miske', now(), now(), 'Podaciii', '', '4');
+INSERT INTO Message (messageUID, fromWho, timeSent, timeRead, texts, picture, chatUID) values (uuid(), 'Jucili', now(), now(), 'Jakaaa pricaaa', '', '4');
+INSERT INTO Message (messageUID, fromWho, timeSent, timeRead, texts, picture, chatUID) values (uuid(), 'Kris', now(), now(), 'Ludnicaaa', '', '4');
+INSERT INTO Message (messageUID, fromWho, timeSent, timeRead, texts, picture, chatUID) values (uuid(), 'Miske', now(), now(), 'Kasandritaaaaa', '', '4');
+INSERT INTO Message (messageUID, fromWho, timeSent, timeRead, texts, picture, chatUID) values (uuid(), 'Jucili', now(), now(), 'oj kassooo', '', '4');
 
 3. Data Provider Functions
 

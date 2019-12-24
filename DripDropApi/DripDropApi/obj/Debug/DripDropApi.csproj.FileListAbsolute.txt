@@ -1,0 +1,192 @@
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\DripDropApi.dll.config
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\DripDropApi.dll
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\DripDropApi.pdb
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\roslyn\csc.exe
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\roslyn\csc.exe.config
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\roslyn\csc.rsp
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\roslyn\csi.exe
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\roslyn\csi.exe.config
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\roslyn\csi.rsp
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\roslyn\System.AppContext.dll
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\roslyn\System.Console.dll
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\roslyn\System.IO.Compression.dll
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\roslyn\System.IO.Pipes.dll
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\roslyn\System.Security.Claims.dll
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\roslyn\System.ValueTuple.dll
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\roslyn\System.Xml.XPath.dll
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\roslyn\vbc.exe
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\roslyn\vbc.exe.config
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\roslyn\vbc.rsp
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\roslyn\VBCSCompiler.exe
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\Antlr3.Runtime.dll
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\Newtonsoft.Json.dll
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\System.Net.Http.Formatting.dll
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\System.Web.Helpers.dll
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\System.Web.Http.dll
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\System.Web.Http.WebHost.dll
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\System.Web.Mvc.dll
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\System.Web.Optimization.dll
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\System.Web.Razor.dll
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\System.Web.WebPages.Deployment.dll
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\System.Web.WebPages.dll
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\System.Web.WebPages.Razor.dll
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\WebGrease.dll
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\Newtonsoft.Json.xml
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\System.Net.Http.Formatting.xml
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\System.Web.Helpers.xml
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\System.Web.Http.xml
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\System.Web.Http.WebHost.xml
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\System.Web.Mvc.xml
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\System.Web.Optimization.xml
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\System.Web.Razor.xml
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\System.Web.WebPages.xml
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\System.Web.WebPages.Deployment.xml
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\System.Web.WebPages.Razor.xml
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\Antlr3.Runtime.pdb
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\obj\Debug\DripDropApi.csprojAssemblyReference.cache
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\obj\Debug\DripDropApi.csproj.CoreCompileInputs.cache
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\obj\Debug\DripDropApi.csproj.CopyComplete
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\obj\Debug\DripDropApi.dll
+C:\Users\krisj\source\repos\DripDropApi\DripDropApi\obj\Debug\DripDropApi.pdb
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\DripDropApi.dll.config
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\DripDropApi.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\DripDropApi.pdb
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\roslyn\csc.exe
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\roslyn\csc.exe.config
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\roslyn\csc.rsp
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\roslyn\csi.exe
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\roslyn\csi.exe.config
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\roslyn\csi.rsp
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\roslyn\Microsoft.Managed.Core.targets
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\roslyn\System.AppContext.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\roslyn\System.Collections.Immutable.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\roslyn\System.Console.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\roslyn\System.Globalization.Calendars.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\roslyn\System.IO.Compression.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\roslyn\System.IO.FileSystem.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\roslyn\System.Net.Http.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\roslyn\System.Net.Sockets.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\roslyn\System.Reflection.Metadata.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\roslyn\System.ValueTuple.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\roslyn\System.Xml.XmlDocument.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\roslyn\System.Xml.XPath.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\roslyn\vbc.exe
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\roslyn\vbc.exe.config
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\roslyn\vbc.rsp
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\roslyn\VBCSCompiler.exe
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\roslyn\VBCSCompiler.exe.config
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\Antlr3.Runtime.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\Cassandra.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\CassandraSharp.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\CassandraSharp.Interfaces.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\LZ4.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\Microsoft.Extensions.Logging.Abstractions.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\Microsoft.Extensions.Logging.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\Microsoft.Web.Infrastructure.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\Microsoft.Win32.Primitives.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\Newtonsoft.Json.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\System.Diagnostics.DiagnosticSource.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\System.Net.Http.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\System.Net.Http.Formatting.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\System.Reactive.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\System.Security.Cryptography.Algorithms.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\System.Security.Cryptography.Encoding.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\System.Security.Cryptography.Primitives.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\System.Security.Cryptography.X509Certificates.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\System.Threading.Tasks.Dataflow.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\System.Web.Helpers.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\System.Web.Http.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\System.Web.Http.WebHost.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\System.Web.Mvc.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\System.Web.Optimization.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\System.Web.Razor.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\System.Web.WebPages.Deployment.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\System.Web.WebPages.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\System.Web.WebPages.Razor.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\WebGrease.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\Cassandra.xml
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\CassandraSharp.pdb
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\CassandraSharp.Interfaces.pdb
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\Microsoft.Extensions.Logging.xml
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\Microsoft.Extensions.Logging.Abstractions.xml
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\Newtonsoft.Json.xml
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\System.Diagnostics.DiagnosticSource.xml
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\System.Net.Http.Formatting.xml
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\System.Reactive.xml
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\System.Threading.Tasks.Dataflow.xml
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\System.Web.Helpers.xml
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\System.Web.Http.xml
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\System.Web.Http.WebHost.xml
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\System.Web.Mvc.xml
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\System.Web.Razor.xml
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\System.Web.WebPages.xml
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\System.Web.WebPages.Deployment.xml
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\System.Web.WebPages.Razor.xml
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\System.Web.Optimization.xml
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\Antlr3.Runtime.pdb
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\obj\Debug\DripDropApi.csprojAssemblyReference.cache
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\obj\Debug\DripDropApi.csproj.CoreCompileInputs.cache
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\obj\Debug\DripDropApi.csproj.CopyComplete
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\obj\Debug\DripDropApi.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\obj\Debug\DripDropApi.pdb

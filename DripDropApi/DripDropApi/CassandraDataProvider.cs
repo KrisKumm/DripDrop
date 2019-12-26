@@ -26,20 +26,20 @@ namespace DripDropApi
             foreach (var userData in usersData)
             {
                 User user = new User();
-                user.userUID = userData["userUID"] != null ? userData["userUID"].ToString() : string.Empty;
+                user.userUID = userData["useruid"] != null ? userData["useruid"].ToString() : string.Empty;
                 user.username = userData["username"] != null ? userData["username"].ToString() : string.Empty;
                 user.nickname = userData["nickname"] != null ? userData["nickname"].ToString() : string.Empty;
                 user.password = userData["password"] != null ? userData["password"].ToString() : string.Empty;
                 user.avatar = userData["avatar"] != null ? userData["avatar"].ToString() : string.Empty;
-                if (userData["serverUIDsList"] != null)
-                    foreach (var item in userData.GetColumn("serverUIDsList").ToString())
+                if (userData["serveruidslist"] != null)
+                    foreach (var item in userData.GetColumn("serveruidslist").ToString())
                     {
                         user.serverUIDsList.Add(item.ToString());
                     }
                 else
                     user.serverUIDsList.Add(string.Empty);
-                if (userData["friendUIDsList"] != null)
-                    foreach (var item in userData["friendUIDsList"].ToString())
+                if (userData["frienduidslist"] != null)
+                    foreach (var item in userData["frienduidslist"].ToString())
                     {
                         user.serverUIDsList.Add(item.ToString());
                     }
@@ -48,7 +48,7 @@ namespace DripDropApi
                 users.Add(user);
             }
 
-            session.Cluster.Shutdown();
+            //session.Cluster.Shutdown();
 
             return users;
         }
@@ -78,24 +78,24 @@ namespace DripDropApi
             if (session == null)
                 return null;
 
-            Row userData = session.Execute("select * from User where userUID='" + userUID + "'").FirstOrDefault();
+            Row userData = session.Execute("select * from User where userUID=" + new Guid(userUID) + "").FirstOrDefault();
 
             if (userData != null)
             {
-                user.userUID = userData["userUID"] != null ? userData["userUID"].ToString() : string.Empty;
+                user.userUID = userData["useruid"] != null ? userData["useruid"].ToString() : string.Empty;
                 user.username = userData["username"] != null ? userData["username"].ToString() : string.Empty;
                 user.nickname = userData["nickname"] != null ? userData["nickname"].ToString() : string.Empty;
                 user.password = userData["password"] != null ? userData["password"].ToString() : string.Empty;
                 user.avatar = userData["avatar"] != null ? userData["avatar"].ToString() : string.Empty;
-                if (userData["serverUIDsList"] != null)
-                    foreach (var item in userData.GetColumn("serverUIDsList").ToString())
+                if (userData["serveruidslist"] != null)
+                    foreach (var item in userData.GetColumn("serveruidslist").ToString())
                     {
                         user.serverUIDsList.Add(item.ToString());
                     }
                 else
                     user.serverUIDsList.Add(string.Empty);
-                if (userData["friendUIDsList"] != null)
-                    foreach (var item in userData["friendUIDsList"].ToString())
+                if (userData["frienduidslist"] != null)
+                    foreach (var item in userData["frienduidslist"].ToString())
                     {
                         user.serverUIDsList.Add(item.ToString());
                     }

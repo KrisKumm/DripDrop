@@ -16,8 +16,8 @@ namespace DripDropApi
         {
             if (session == null)
             {
-                Cluster cluster = Cluster.Builder().AddContactPoint("127.0.0.1").Build();
-                session = cluster.Connect("DripDrop");
+                Cluster cluster = Cluster.Builder().WithPort(9042).AddContactPoint("127.0.0.1").Build();
+                session = cluster.Connect("dripdrop");
             }
             return session;
         }

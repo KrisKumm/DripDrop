@@ -246,22 +246,22 @@
             </summary>
         </member>
         <member name="P:Cassandra.Builder.PoolingOptions">
-             <summary>
-              The pooling options used by this builder.
-             </summary>
+            <summary>
+             The pooling options used by this builder.
+            </summary>
             
-             <returns>the pooling options that will be used by this builder. You can use
-              the returned object to define the initial pooling options for the built
-              cluster.</returns>
+            <returns>the pooling options that will be used by this builder. You can use
+             the returned object to define the initial pooling options for the built
+             cluster.</returns>
         </member>
         <member name="P:Cassandra.Builder.SocketOptions">
-             <summary>
-              The socket options used by this builder.
-             </summary>
+            <summary>
+             The socket options used by this builder.
+            </summary>
             
-             <returns>the socket options that will be used by this builder. You can use
-              the returned object to define the initial socket options for the built
-              cluster.</returns>
+            <returns>the socket options that will be used by this builder. You can use
+             the returned object to define the initial socket options for the built
+             cluster.</returns>
         </member>
         <member name="P:Cassandra.Builder.ContactPoints">
             <summary>
@@ -274,14 +274,14 @@
             </summary>
         </member>
         <member name="M:Cassandra.Builder.GetConfiguration">
-             <summary>
-              The configuration that will be used for the new cluster. <p> You <b>should
-              not</b> modify this object directly as change made to the returned object may
-              not be used by the cluster build. Instead, you should use the other methods
-              of this <c>Builder</c></p>.
-             </summary>
+            <summary>
+             The configuration that will be used for the new cluster. <p> You <b>should
+             not</b> modify this object directly as change made to the returned object may
+             not be used by the cluster build. Instead, you should use the other methods
+             of this <c>Builder</c></p>.
+            </summary>
             
-             <returns>the configuration to use for the new cluster.</returns>
+            <returns>the configuration to use for the new cluster.</returns>
         </member>
         <member name="M:Cassandra.Builder.WithPort(System.Int32)">
             <summary>
@@ -292,14 +292,14 @@
             <returns>this Builder</returns>
         </member>
         <member name="M:Cassandra.Builder.WithQueryOptions(Cassandra.QueryOptions)">
-             <summary>
-             Sets the QueryOptions to use for the newly created Cluster.
+            <summary>
+            Sets the QueryOptions to use for the newly created Cluster.
             
-             If no query options are set through this method, default query
-             options will be used.
-             </summary>
-             <param name="options">the QueryOptions to use.</param>
-             <returns>this Builder.</returns>
+            If no query options are set through this method, default query
+            options will be used.
+            </summary>
+            <param name="options">the QueryOptions to use.</param>
+            <returns>this Builder.</returns>
         </member>
         <member name="M:Cassandra.Builder.WithCompression(Cassandra.CompressionType)">
             <summary>
@@ -326,16 +326,16 @@
              won't be able to initialize itself correctly.
             </summary>
             <remarks>
-             However, this can be useful if the Cassandra nodes are behind a router and
-             are not accessed directly. Note that if you are in this situation
-             (Cassandra nodes are behind a router, not directly accessible), you almost
-             surely want to provide a specific <c>IAddressTranslator</c>
-             (through <link>Builder.WithAddressTranslater</link>) to translate actual
-             Cassandra node addresses to the addresses the driver should use, otherwise
-             the driver will not be able to auto-detect new nodes (and will generally not
+             However, this can be useful if the Cassandra nodes are behind a router and 
+             are not accessed directly. Note that if you are in this situation 
+             (Cassandra nodes are behind a router, not directly accessible), you almost 
+             surely want to provide a specific <c>IAddressTranslator</c> 
+             (through <link>Builder.WithAddressTranslater</link>) to translate actual 
+             Cassandra node addresses to the addresses the driver should use, otherwise 
+             the driver will not be able to auto-detect new nodes (and will generally not 
              function optimally).
             </remarks>
-            <param name="address">the address of the node to connect to</param>
+            <param name="address">the address of the node to connect to</param> 
             <returns>this Builder</returns>
         </member>
         <member name="M:Cassandra.Builder.AddContactPoint(System.Net.IPAddress)">
@@ -343,7 +343,7 @@
              Add contact point. See <see cref="M:Cassandra.Builder.AddContactPoint(System.String)"/> for more details
              on contact points.
             </summary>
-            <param name="address"> address of the node to add as contact point</param>
+            <param name="address"> address of the node to add as contact point</param> 
             <returns>this Builder</returns>
         </member>
         <member name="M:Cassandra.Builder.AddContactPoint(System.Net.IPEndPoint)">
@@ -351,7 +351,7 @@
              Add contact point. See <see cref="M:Cassandra.Builder.AddContactPoint(System.String)"/> for more details
              on contact points.
             </summary>
-            <param name="address"> address of the node to add as contact point</param>
+            <param name="address"> address of the node to add as contact point</param> 
             <returns>this Builder</returns>
         </member>
         <member name="M:Cassandra.Builder.AddContactPoints(System.String[])">
@@ -359,7 +359,7 @@
              Add contact points. See <see cref="M:Cassandra.Builder.AddContactPoint(System.String)"/> for more details
              on contact points.
             </summary>
-            <param name="addresses"> addresses of the nodes to add as contact point</param>
+            <param name="addresses"> addresses of the nodes to add as contact point</param> 
             <returns>this Builder </returns>
         </member>
         <member name="M:Cassandra.Builder.AddContactPoints(System.Collections.Generic.IEnumerable{System.String})">
@@ -387,50 +387,43 @@
             <returns>this Builder</returns>
         </member>
         <member name="M:Cassandra.Builder.AddContactPoints(System.Net.IPEndPoint[])">
-             <summary>
-              Add contact points. See <link>Builder.AddContactPoint</link> for more details
-              on contact points.
-             </summary>
-             <param name="addresses"> addresses of the nodes to add as contact point
-              </param>
+            <summary>
+             Add contact points. See <link>Builder.AddContactPoint</link> for more details
+             on contact points.
+            </summary>
+            <param name="addresses"> addresses of the nodes to add as contact point
+             </param>
             
-             <returns>this Builder</returns>
+            <returns>this Builder</returns>
         </member>
         <member name="M:Cassandra.Builder.AddContactPoints(System.Collections.Generic.IEnumerable{System.Net.IPEndPoint})">
-             <summary>
-              Add contact points. See <link>Builder.AddContactPoint</link> for more details
-              on contact points.
-             </summary>
-             <param name="addresses"> addresses of the nodes to add as contact point
-              </param>
+            <summary>
+             Add contact points. See <link>Builder.AddContactPoint</link> for more details
+             on contact points.
+            </summary>
+            <param name="addresses"> addresses of the nodes to add as contact point
+             </param>
             
-             <returns>this Builder</returns>
+            <returns>this Builder</returns>
         </member>
         <member name="M:Cassandra.Builder.WithLoadBalancingPolicy(Cassandra.ILoadBalancingPolicy)">
             <summary>
-            <para>
-            Configure the load balancing policy to use for the new cluster.
-            </para>
-            <para>
-            If no load balancing policy is set through this method, <see cref="P:Cassandra.Policies.DefaultLoadBalancingPolicy"/> will be used instead.
-            </para>
-            <para>
-            To specify the local datacenter with the default load balancing policy, use the following method to create a
-            new policy instance: <see cref="M:Cassandra.Policies.NewDefaultLoadBalancingPolicy(System.String)"/>.
-            </para>
+             Configure the load balancing policy to use for the new cluster. <p> If no
+             load balancing policy is set through this method,
+             <link>Policies.DefaultLoadBalancingPolicy</link> will be used instead.</p>
             </summary>
-            <param name="policy"> the load balancing policy to use.</param>
+            <param name="policy"> the load balancing policy to use </param>
             <returns>this Builder</returns>
         </member>
         <member name="M:Cassandra.Builder.WithReconnectionPolicy(Cassandra.IReconnectionPolicy)">
-             <summary>
-              Configure the reconnection policy to use for the new cluster. <p> If no
-              reconnection policy is set through this method,
-              <link>Policies.DefaultReconnectionPolicy</link> will be used instead.</p>
-             </summary>
-             <param name="policy"> the reconnection policy to use </param>
+            <summary>
+             Configure the reconnection policy to use for the new cluster. <p> If no
+             reconnection policy is set through this method,
+             <link>Policies.DefaultReconnectionPolicy</link> will be used instead.</p>
+            </summary>
+            <param name="policy"> the reconnection policy to use </param>
             
-             <returns>this Builder</returns>
+            <returns>this Builder</returns>
         </member>
         <member name="M:Cassandra.Builder.WithRetryPolicy(Cassandra.IRetryPolicy)">
             <summary>
@@ -448,8 +441,8 @@
         </member>
         <member name="M:Cassandra.Builder.WithSpeculativeExecutionPolicy(Cassandra.ISpeculativeExecutionPolicy)">
             <summary>
-             Configure the speculative execution to use for the new cluster.
-            <para>
+             Configure the speculative execution to use for the new cluster. 
+            <para> 
             If no speculative execution policy is set through this method, <see cref="P:Cassandra.Policies.DefaultSpeculativeExecutionPolicy"/> will be used instead.
             </para>
             </summary>
@@ -460,7 +453,7 @@
             <summary>
             Configures the generator that will produce the client-side timestamp sent with each query.
             <para>
-            This feature is only available with protocol version 3 or above of the native protocol.
+            This feature is only available with protocol version 3 or above of the native protocol. 
             With earlier versions, timestamps are always generated server-side, and setting a generator
             through this method will have no effect.
             </para>
@@ -473,12 +466,12 @@
             <returns>This builder instance</returns>
         </member>
         <member name="M:Cassandra.Builder.WithConnectionString(System.String)">
-             <summary>
-              Configure the cluster by applying settings from ConnectionString.
-             </summary>
-             <param name="connectionString"> the ConnectionString to use </param>
+            <summary>
+             Configure the cluster by applying settings from ConnectionString. 
+            </summary>
+            <param name="connectionString"> the ConnectionString to use </param>
             
-             <returns>this Builder</returns>
+            <returns>this Builder</returns>
         </member>
         <member name="M:Cassandra.Builder.WithCredentials(System.String,System.String)">
             <summary>
@@ -502,18 +495,18 @@
             <returns>this Builder</returns>
         </member>
         <member name="M:Cassandra.Builder.WithoutRowSetBuffering">
-             <summary>
-              Disables row set buffering for the created cluster (row set buffering is enabled by
-              default otherwise).
-             </summary>
+            <summary>
+             Disables row set buffering for the created cluster (row set buffering is enabled by
+             default otherwise).
+            </summary>
             
-             <returns>this builder</returns>
+            <returns>this builder</returns>
         </member>
         <member name="M:Cassandra.Builder.WithQueryTimeout(System.Int32)">
             <summary>
             Specifies the number of milliseconds that the driver should wait for the response before the query times out in a synchronous operation.
             <para>
-            This will cause that synchronous operations like <see cref="M:Cassandra.ISession.Execute(System.String)"/> to throw a <see cref="T:System.TimeoutException"/>
+            This will cause that synchronous operations like <see cref="M:Cassandra.ISession.Execute(System.String)"/> to throw a <see cref="T:System.TimeoutException"/> 
             after the specified number of milliseconds.
             </para>
             Default timeout value is set to <code>20,000</code> (20 seconds).
@@ -538,7 +531,7 @@
         </member>
         <member name="M:Cassandra.Builder.WithSSL">
             <summary>
-             Enables the use of SSL for the created Cluster. Calling this method will use default SSL options.
+             Enables the use of SSL for the created Cluster. Calling this method will use default SSL options. 
             </summary>
             <remarks>
             If SSL is enabled, the driver will not connect to any
@@ -550,7 +543,7 @@
         </member>
         <member name="M:Cassandra.Builder.WithSSL(Cassandra.SSLOptions)">
             <summary>
-             Enables the use of SSL for the created Cluster using the provided options.
+             Enables the use of SSL for the created Cluster using the provided options. 
             </summary>
             <remarks>
             If SSL is enabled, the driver will not connect to any
@@ -559,7 +552,7 @@
             SSL in the driver. Note that SSL certificate common name(CN) on Cassandra node must match Cassandra node hostname.
             </remarks>
             <param name="sslOptions">SSL options to use.</param>
-            <returns>this builder</returns>
+            <returns>this builder</returns>        
         </member>
         <member name="M:Cassandra.Builder.WithAddressTranslator(Cassandra.IAddressTranslator)">
             <summary>
@@ -581,7 +574,7 @@
             cluster upon establishing the first connection.
             </para>
             <para>
-            Useful when connecting to a cluster that contains nodes with different major/minor versions
+            Useful when connecting to a cluster that contains nodes with different major/minor versions 
             of Cassandra. For example, preparing for a rolling upgrade of the Cluster.
             </para>
             </summary>
@@ -604,7 +597,7 @@
             cluster upon establishing the first connection.
             </para>
             <para>
-            Useful when connecting to a cluster that contains nodes with different major/minor versions
+            Useful when connecting to a cluster that contains nodes with different major/minor versions 
             of Cassandra. For example, preparing for a rolling upgrade of the Cluster.
             </para>
             </summary>
@@ -645,61 +638,10 @@
             <returns>This Builder.</returns>
             <exception cref="T:System.ArgumentException">If the provided value is zero or less.</exception>
         </member>
-        <member name="M:Cassandra.Builder.WithMetrics(Cassandra.Metrics.Abstractions.IDriverMetricsProvider)">
-            <summary>
-            <para>
-            Enables metrics. DataStax provides an implementation based on a third party library (App.Metrics)
-            on a separate NuGet package: CassandraCSharpDriver.AppMetrics
-            Alternatively, you can implement your own provider that implements <see cref="T:Cassandra.Metrics.Abstractions.IDriverMetricsProvider"/>.
-            </para>
-            <para>
-            This method enables all individual metrics without a bucket prefix. To customize these options,
-            use <see cref="M:Cassandra.Builder.WithMetrics(Cassandra.Metrics.Abstractions.IDriverMetricsProvider,Cassandra.Metrics.DriverMetricsOptions)"/>.
-            </para>
-            </summary>
-            <param name="driverMetricsProvider">Metrics Provider implementation.</param>
-            <returns>This builder</returns>
-        </member>
-        <member name="M:Cassandra.Builder.WithMetrics(Cassandra.Metrics.Abstractions.IDriverMetricsProvider,Cassandra.Metrics.DriverMetricsOptions)">
-            <summary>
-            <para>
-            Enables metrics. DataStax provides an implementation based on a third party library (App.Metrics)
-            on a separate NuGet package: CassandraCSharpDriver.AppMetrics
-            Alternatively, you can implement your own provider that implements <see cref="T:Cassandra.Metrics.Abstractions.IDriverMetricsProvider"/>.
-            </para>
-            <para>
-            This method enables all individual metrics without a bucket prefix. To customize these settings,
-            use <see cref="M:Cassandra.Builder.WithMetrics(Cassandra.Metrics.Abstractions.IDriverMetricsProvider,Cassandra.Metrics.DriverMetricsOptions)"/>. For explanations on these settings,
-            see the API docs of the <see cref="T:Cassandra.Metrics.DriverMetricsOptions"/> class.
-            </para> 
-            <para>
-            The AppMetrics provider also has some settings that can be customized, check out the API docs of
-            Cassandra.AppMetrics.DriverAppMetricsOptions.
-            <para>
-            Here is an example:
-            <code>
-            var cluster = 
-                Cluster.Builder()
-                       .WithMetrics(
-                           metrics.CreateDriverMetricsProvider(new DriverAppMetricsOptions()),
-                           new DriverMetricsOptions()
-                               .SetEnabledNodeMetrics(NodeMetric.DefaultNodeMetrics.Except(new [] { NodeMetric.Meters.BytesSent }))
-                               .SetEnabledSessionMetrics(
-                                   SessionMetric.DefaultSessionMetrics.Except(new[] { SessionMetric.Meters.BytesReceived }))
-                               .SetBucketPrefix("web.app"))
-                       .Build();
-            </code>
-            </para>
-            </para>
-            </summary>
-            <param name="driverMetricsProvider">Metrics Provider implementation.</param>
-            <param name="metricsOptions">Metrics Provider implementation.</param>
-            <returns>This builder</returns>
-        </member>
         <member name="M:Cassandra.Builder.WithExecutionProfiles(System.Action{Cassandra.IExecutionProfileOptions})">
             <summary>
             <para>
-            Adds Execution Profiles to the Cluster instance.
+            Adds Execution Profiles to the Cluster instance. 
             </para>
             <para>
             Execution profiles are like configuration presets, multiple methods
@@ -728,93 +670,45 @@
             <returns>This builder</returns>
         </member>
         <member name="M:Cassandra.Builder.WithMetadataSyncOptions(Cassandra.MetadataSyncOptions)">
-             <summary>
-             <para>
-             If not set through this method, the default value options will be used (metadata synchronization is enabled by default). The api reference of <see cref="T:Cassandra.MetadataSyncOptions"/>
-             specifies what is the default for each option.
-             </para>
-             <para>
-             In case you disable Metadata synchronization, please ensure you invoke <see cref="M:Cassandra.ICluster.RefreshSchemaAsync(System.String,System.String)"/> in order to keep the token metadata up to date
-             otherwise you will not be getting everything you can out of token aware routing, i.e. <see cref="T:Cassandra.TokenAwarePolicy"/>, which is enabled by the default.
-             </para>
-             <para>
-             Disabling this feature has the following impact:
-            
-             <list type="bullet">
-            
-             <item><description>
-             Token metadata will not be computed and stored.
-             This means that token aware routing (<see cref="T:Cassandra.TokenAwarePolicy"/>, enabled by default) will only work correctly
-             if you keep the token metadata up to date using the <see cref="M:Cassandra.ICluster.RefreshSchemaAsync(System.String,System.String)"/> method.
-             If you wish to go this route of manually refreshing the metadata then
-             it's recommended to refresh only the keyspaces that this application will use, by passing the <code>keyspace</code> parameter.
-             </description></item>
-            
-             <item><description>
-             Keyspace metadata will not be cached by the driver. Every time you call methods like <see cref="M:Cassandra.Metadata.GetTable(System.String,System.String)"/>, <see cref="M:Cassandra.Metadata.GetKeyspace(System.String)"/>
-             and other similar methods of the <see cref="T:Cassandra.Metadata"/> class, the driver will query that data on demand and will not cache it.
-             </description></item>
-            
-             <item><description>
-             The driver will not handle <code>SCHEMA_CHANGED</code> responses. This means that when you execute schema changing statements through the driver, it will
-             not update the schema or topology metadata automatically before returning.
-             </description></item>
-            
-             </list>
-             </para>
-             </summary>
-             <summary>
-             </summary>
-             <param name="metadataSyncOptions">The new options to set.</param>
-             <returns>This Builder.</returns>
-        </member>
-        <member name="M:Cassandra.Builder.WithSessionName(System.String)">
-            <summary>
-            <see cref="T:Cassandra.ISession"/> objects created through the <see cref="T:Cassandra.ICluster"/> built from this builder will have <see cref="P:Cassandra.ISession.SessionName"/>
-            set to the value provided in this method.
-            The first session created by this cluster instance will have its name set exactly as it is provided in this method.
-            Any session created by the <see cref="T:Cassandra.ICluster"/> built from this builder after the first one will have its name set as a concatenation
-            of the provided value plus a counter.
-            <code>
-                    var cluster = Cluster.Builder().WithSessionName("main-session").Build();
-                    var session = cluster.Connect(); // session.SessionName == "main-session"
-                    var session1 = cluster.Connect(); // session1.SessionName == "main-session1"
-                    var session2 = cluster.Connect(); // session2.SessionName == "main-session2"
-            </code>
-            If this setting is not set, the default session names will be "s0", "s1", "s2", etc.
-            <code>
-                    var cluster = Cluster.Builder().Build();
-                    var session = cluster.Connect(); // session.SessionName == "s0"
-                    var session1 = cluster.Connect(); // session1.SessionName == "s1"
-                    var session2 = cluster.Connect(); // session2.SessionName == "s2"
-            </code>
-            </summary>
-            <param name="sessionName"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Cassandra.Builder.WithCloudSecureConnectionBundle(System.String)">
             <summary>
             <para>
-            Configures a Cluster using the Cloud Secure Connection Bundle.
-            Using this method will configure this builder with specific contact points, SSL options, credentials and load balancing policy.
-            When needed, you can specify custom settings by calling other builder methods. 
+            If not set through this method, the default value options will be used (metadata synchronization is enabled by default). The api reference of <see cref="T:Cassandra.MetadataSyncOptions"/>
+            specifies what is the default for each option.
             </para>
             <para>
-            In case you need to specify a different set of credentials from the one in the bundle, here is an example:
-            <code>
-                    Cluster.Builder()
-                              .WithCloudSecureConnectionBundle("/path/to/bundle.zip")
-                              .WithCredentials("username", "password")
-                              .Build();
-            </code>
-            </para> 
+            In case you disable Metadata synchronization, please ensure you invoke <see cref="M:Cassandra.ICluster.RefreshSchemaAsync(System.String,System.String)"/> in order to keep the token metadata up to date
+            otherwise you will not be getting everything you can out of token aware routing, i.e. <see cref="T:Cassandra.TokenAwarePolicy"/>, which is enabled by the default. 
+            </para>
             <para>
-            <see cref="M:Cassandra.Builder.Build"/> will throw <see cref="T:System.InvalidOperationException"/> when an error occurs that is not related to
-            connectivity and <see cref="T:Cassandra.NoHostAvailableException"/> when an error occurs while trying to obtain the cluster metadata from the remote endpoint.
+            Disabling this feature has the following impact:
+            
+            <list type="bullet">
+            
+            <item><description>
+            Token metadata will not be computed and stored.
+            This means that token aware routing (<see cref="T:Cassandra.TokenAwarePolicy"/>, enabled by default) will only work correctly
+            if you keep the token metadata up to date using the <see cref="M:Cassandra.ICluster.RefreshSchemaAsync(System.String,System.String)"/> method.
+            If you wish to go this route of manually refreshing the metadata then
+            it's recommended to refresh only the keyspaces that this application will use, by passing the <code>keyspace</code> parameter.
+            </description></item>
+            
+            <item><description>
+            Keyspace metadata will not be cached by the driver. Every time you call methods like <see cref="M:Cassandra.Metadata.GetTable(System.String,System.String)"/>, <see cref="M:Cassandra.Metadata.GetKeyspace(System.String)"/>
+            and other similar methods of the <see cref="T:Cassandra.Metadata"/> class, the driver will query that data on demand and will not cache it.
+            </description></item>
+            
+            <item><description>
+            The driver will not handle <code>SCHEMA_CHANGED</code> responses. This means that when you execute schema changing statements through the driver, it will
+            not update the schema or topology metadata automatically before returning.
+            </description></item>
+            
+            </list>
             </para>
             </summary>
-            <param name="bundlePath">Path of the secure connection bundle.</param>
-            <returns>A preconfigured builder ready for use.</returns>
+            <summary>
+            </summary>
+            <param name="metadataSyncOptions">The new options to set.</param>
+            <returns>This Builder.</returns>
         </member>
         <member name="M:Cassandra.Builder.Build">
             <summary>
@@ -823,11 +717,6 @@
             <exception cref="T:Cassandra.NoHostAvailableException">Throws a NoHostAvailableException when no host could be resolved.</exception>
             <exception cref="T:System.ArgumentException">Throws an ArgumentException when no contact point was provided.</exception>
             <returns>the newly build Cluster instance. </returns>
-        </member>
-        <member name="M:Cassandra.Builder.SetContactPoints(System.Collections.Generic.IEnumerable{System.String})">
-            <summary>
-            Clear and set contact points.
-            </summary>
         </member>
         <member name="T:Cassandra.ClientOptions">
             <summary>
@@ -843,71 +732,6 @@
             <summary>
             Gets the keyspace to be used after connecting to the cluster.
             </summary>
-        </member>
-        <member name="T:Cassandra.Cloud.CloudConfigurationParser">
-            <inheritdoc />
-        </member>
-        <member name="M:Cassandra.Cloud.CloudConfigurationParser.ParseConfig(System.IO.Stream)">
-            <inheritdoc />
-        </member>
-        <member name="T:Cassandra.Cloud.CloudMetadataService">
-            <inheritdoc />
-        </member>
-        <member name="M:Cassandra.Cloud.CloudMetadataService.GetClusterMetadataAsync(System.String,Cassandra.SocketOptions,Cassandra.SSLOptions)">
-            <inheritdoc />
-        </member>
-        <member name="T:Cassandra.Cloud.CustomCaCertificateValidator">
-            <summary>
-            Validates a certificate chain using a specific root CA. Also validates that the server certificate has a specific CN.
-            </summary>
-        </member>
-        <member name="T:Cassandra.Cloud.ICertificateValidator">
-            <summary>
-            Validates a certificate (and its chain). Used in server certificate callbacks with SslStream, HttpClient, etc.
-            </summary>
-        </member>
-        <member name="T:Cassandra.Cloud.ICloudConfigurationParser">
-            <summary>
-            Parses the configuration data from the secure connection bundle.
-            </summary>
-        </member>
-        <member name="M:Cassandra.Cloud.ICloudConfigurationParser.ParseConfig(System.IO.Stream)">
-            <summary>
-            Parses config.json file from the secure connection bundle.
-            </summary>
-            <param name="stream">Stream that contains the config.json data in text format</param>
-            <returns>Configuration object mapped from config.json</returns>
-        </member>
-        <member name="T:Cassandra.Cloud.ICloudMetadataService">
-            <summary>
-            Client to interact with the Cloud Metadata Service.
-            </summary>
-        </member>
-        <member name="M:Cassandra.Cloud.ICloudMetadataService.GetClusterMetadataAsync(System.String,Cassandra.SocketOptions,Cassandra.SSLOptions)">
-            <summary>
-            Retrieve the cloud cluster's metadata from the cloud metadata service.
-            </summary>
-            <param name="url">Metadata endpoint</param>
-            <param name="socketOptions">Socket options to use for the HTTPS request (timeout).</param>
-            <param name="sslOptions">SSL Options to use for the HTTPS request.</param>
-        </member>
-        <member name="T:Cassandra.Cloud.ISecureConnectionBundleParser">
-            <summary>
-            Loads and parses the secure connection bundle.
-            </summary>
-        </member>
-        <member name="M:Cassandra.Cloud.ISecureConnectionBundleParser.ParseBundle(System.String)">
-            <summary>
-            Loads and parses the secure connection bundle (creds.zip)
-            </summary>
-            <param name="path">Path of the secure connection bundle file.</param>
-            <returns>The configuration object built from the provided bundle.</returns>
-        </member>
-        <member name="T:Cassandra.Cloud.SecureConnectionBundleParser">
-            <inheritdoc />
-        </member>
-        <member name="M:Cassandra.Cloud.SecureConnectionBundleParser.ParseBundle(System.String)">
-            <inheritdoc />
         </member>
         <member name="T:Cassandra.Cluster">
             <summary>
@@ -949,7 +773,7 @@
             <summary>
             Gets or sets the maximum protocol version used by this driver.
             <para>
-            While property value is maintained for backward-compatibility,
+            While property value is maintained for backward-compatibility, 
             use <see cref="M:Cassandra.ProtocolOptions.SetMaxProtocolVersion(Cassandra.ProtocolVersion)"/> to set the maximum protocol version used by the driver.
             </para>
             <para>
@@ -1003,12 +827,12 @@
         </member>
         <member name="M:Cassandra.Cluster.ConnectAndCreateDefaultKeyspaceIfNotExists(System.Collections.Generic.Dictionary{System.String,System.String},System.Boolean)">
             <summary>
-            Creates new session on this cluster, and sets it to default keyspace.
+            Creates new session on this cluster, and sets it to default keyspace. 
             If default keyspace does not exist then it will be created and session will be set to it.
             Name of default keyspace can be specified during creation of cluster object with <c>Cluster.Builder().WithDefaultKeyspace("keyspace_name")</c> method.
             </summary>
-            <param name="replication">Replication property for this keyspace. To set it, refer to the <see cref="T:Cassandra.ReplicationStrategies"/> class methods.
-            It is a dictionary of replication property sub-options where key is a sub-option name and value is a value for that sub-option.
+            <param name="replication">Replication property for this keyspace. To set it, refer to the <see cref="T:Cassandra.ReplicationStrategies"/> class methods. 
+            It is a dictionary of replication property sub-options where key is a sub-option name and value is a value for that sub-option. 
             <p>Default value is <c>SimpleStrategy</c> with <c>'replication_factor' = 2</c></p></param>
             <param name="durableWrites">Whether to use the commit log for updates on this keyspace. Default is set to <c>true</c>.</param>
             <returns>a new session on this cluster set to default keyspace.</returns>
@@ -1237,7 +1061,7 @@
             built from the execution profile with that key.
             </summary>
         </member>
-        <member name="M:Cassandra.Configuration.#ctor(Cassandra.Policies,Cassandra.ProtocolOptions,Cassandra.PoolingOptions,Cassandra.SocketOptions,Cassandra.ClientOptions,Cassandra.IAuthProvider,Cassandra.IAuthInfoProvider,Cassandra.QueryOptions,Cassandra.IAddressTranslator,Cassandra.Requests.IStartupOptionsFactory,Cassandra.SessionManagement.ISessionFactoryBuilder{Cassandra.SessionManagement.IInternalCluster,Cassandra.SessionManagement.IInternalSession},System.Collections.Generic.IReadOnlyDictionary{System.String,Cassandra.IExecutionProfile},Cassandra.ExecutionProfiles.IRequestOptionsMapper,Cassandra.MetadataSyncOptions,Cassandra.Connections.IEndPointResolver,Cassandra.Metrics.Abstractions.IDriverMetricsProvider,Cassandra.Metrics.DriverMetricsOptions,System.String,Cassandra.Requests.IRequestHandlerFactory,Cassandra.Connections.IHostConnectionPoolFactory,Cassandra.Requests.IRequestExecutionFactory,Cassandra.Connections.IConnectionFactory,Cassandra.Connections.IControlConnectionFactory,Cassandra.Requests.IPrepareHandlerFactory,Cassandra.ProtocolEvents.ITimerFactory,Cassandra.Observers.IObserverFactoryBuilder)">
+        <member name="M:Cassandra.Configuration.#ctor(Cassandra.Policies,Cassandra.ProtocolOptions,Cassandra.PoolingOptions,Cassandra.SocketOptions,Cassandra.ClientOptions,Cassandra.IAuthProvider,Cassandra.IAuthInfoProvider,Cassandra.QueryOptions,Cassandra.IAddressTranslator,Cassandra.Requests.IStartupOptionsFactory,Cassandra.SessionManagement.ISessionFactoryBuilder{Cassandra.SessionManagement.IInternalCluster,Cassandra.SessionManagement.IInternalSession},System.Collections.Generic.IReadOnlyDictionary{System.String,Cassandra.IExecutionProfile},Cassandra.ExecutionProfiles.IRequestOptionsMapper,Cassandra.MetadataSyncOptions,Cassandra.Connections.IEndPointResolver,Cassandra.Requests.IRequestHandlerFactory,Cassandra.Connections.IHostConnectionPoolFactory,Cassandra.Requests.IRequestExecutionFactory,Cassandra.Connections.IConnectionFactory,Cassandra.Connections.IControlConnectionFactory,Cassandra.Requests.IPrepareHandlerFactory,Cassandra.ProtocolEvents.ITimerFactory)">
             <summary>
             Creates a new instance. This class is also used to shareable a context across all instance that are created below one Cluster instance.
             One configuration instance per Cluster instance.
@@ -1251,11 +1075,6 @@
         <member name="M:Cassandra.Configuration.GetPoolingOptions(Cassandra.ProtocolVersion)">
             <summary>
             Gets the pooling options. If not specified, gets the default by protocol version
-            </summary>
-        </member>
-        <member name="M:Cassandra.Configuration.SetDefaultConsistencyLevel(Cassandra.ConsistencyLevel)">
-            <summary>
-            Sets the default consistency level.
             </summary>
         </member>
         <member name="M:Cassandra.Connections.BaseEndPointResolver.SafeRefreshAsync(System.Func{System.Threading.Tasks.Task})">
@@ -1368,14 +1187,6 @@
             <exception cref="T:Cassandra.AuthenticationException" />
             <exception cref="T:Cassandra.UnsupportedProtocolVersionException"></exception>
         </member>
-        <member name="M:Cassandra.Connections.Connection.DoOpen">
-            <summary>
-            Initializes the connection.
-            </summary>
-            <exception cref="T:System.Net.Sockets.SocketException">Throws a SocketException when the connection could not be established with the host</exception>
-            <exception cref="T:Cassandra.AuthenticationException" />
-            <exception cref="T:Cassandra.UnsupportedProtocolVersionException"></exception>
-        </member>
         <member name="M:Cassandra.Connections.Connection.Kill">
             <summary>
             Silently kill the connection, for testing purposes only
@@ -1397,12 +1208,12 @@
             Saves the current read state (header and body stream) for the next read event.
             </summary>
         </member>
-        <member name="M:Cassandra.Connections.Connection.CreateResponseAction(Cassandra.FrameHeader,System.Action{Cassandra.Connections.IRequestError,Cassandra.Responses.Response,System.Int64})">
+        <member name="M:Cassandra.Connections.Connection.CreateResponseAction(Cassandra.FrameHeader,System.Action{System.Exception,Cassandra.Responses.Response})">
             <summary>
             Returns an action that capture the parameters closure
             </summary>
         </member>
-        <member name="M:Cassandra.Connections.Connection.InvokeReadCallbacks(System.IO.MemoryStream,System.Collections.Generic.ICollection{System.Action{System.IO.MemoryStream,System.Int64}},System.Int64)">
+        <member name="M:Cassandra.Connections.Connection.InvokeReadCallbacks(System.IO.MemoryStream,System.Collections.Generic.ICollection{System.Action{System.IO.MemoryStream}})">
             <summary>
             Invokes the callbacks using the default TaskScheduler.
             </summary>
@@ -1419,10 +1230,10 @@
         <member name="M:Cassandra.Connections.Connection.Send(Cassandra.Requests.IRequest)">
             <inheritdoc />
         </member>
-        <member name="M:Cassandra.Connections.Connection.Send(Cassandra.Requests.IRequest,System.Action{Cassandra.Connections.IRequestError,Cassandra.Responses.Response},System.Int32)">
+        <member name="M:Cassandra.Connections.Connection.Send(Cassandra.Requests.IRequest,System.Action{System.Exception,Cassandra.Responses.Response},System.Int32)">
             <inheritdoc />
         </member>
-        <member name="M:Cassandra.Connections.Connection.Send(Cassandra.Requests.IRequest,System.Action{Cassandra.Connections.IRequestError,Cassandra.Responses.Response})">
+        <member name="M:Cassandra.Connections.Connection.Send(Cassandra.Requests.IRequest,System.Action{System.Exception,Cassandra.Responses.Response})">
             <inheritdoc />
         </member>
         <member name="M:Cassandra.Connections.Connection.RemoveFromPending(System.Int16)">
@@ -1783,7 +1594,7 @@
             Sends a new request if possible. If it is not possible it queues it up.
             </summary>
         </member>
-        <member name="M:Cassandra.Connections.IConnection.Send(Cassandra.Requests.IRequest,System.Action{Cassandra.Connections.IRequestError,Cassandra.Responses.Response},System.Int32)">
+        <member name="M:Cassandra.Connections.IConnection.Send(Cassandra.Requests.IRequest,System.Action{System.Exception,Cassandra.Responses.Response},System.Int32)">
             <summary>
             Sends a new request if possible and executes the callback when the response is parsed. If it is not possible it queues it up.
             </summary>
@@ -1793,7 +1604,7 @@
             Sends a new request if possible with the default timeout. If it is not possible it queues it up.
             </summary>
         </member>
-        <member name="M:Cassandra.Connections.IConnection.Send(Cassandra.Requests.IRequest,System.Action{Cassandra.Connections.IRequestError,Cassandra.Responses.Response})">
+        <member name="M:Cassandra.Connections.IConnection.Send(Cassandra.Requests.IRequest,System.Action{System.Exception,Cassandra.Responses.Response})">
             <summary>
             Sends a new request if possible and executes the callback when the response is parsed with the default timeout. If it is not possible it queues it up.
             </summary>
@@ -1845,16 +1656,6 @@
             <param name="translator">Address translator to use when parsing the host's IP address from the <paramref name="row"/>.</param>
             <param name="port">Port to use when building the <see cref="T:System.Net.IPEndPoint"/> in case the IP address is parsed from the <paramref name="row"/>.</param>
             <returns></returns>
-        </member>
-        <member name="M:Cassandra.Connections.IConnectionFactory.Create(Cassandra.Serialization.Serializer,Cassandra.Connections.IConnectionEndPoint,Cassandra.Configuration,Cassandra.Observers.Abstractions.IConnectionObserver)">
-            <summary>
-            Create an observed connection. Usually used for <see cref="T:Cassandra.Connections.IHostConnectionPool"/> connections.
-            </summary>
-        </member>
-        <member name="M:Cassandra.Connections.IConnectionFactory.CreateUnobserved(Cassandra.Serialization.Serializer,Cassandra.Connections.IConnectionEndPoint,Cassandra.Configuration)">
-            <summary>
-            Create an unobserved connection (without a <see cref="T:Cassandra.Observers.Abstractions.IConnectionObserver"/>). Usually used for control connections.
-            </summary>
         </member>
         <member name="P:Cassandra.Connections.IControlConnection.Host">
             <summary>
@@ -1986,27 +1787,6 @@
             Until the task is completed, no other thread is expected to be using this instance.
             </summary>
         </member>
-        <member name="T:Cassandra.Connections.IRequestError">
-            <summary>
-            Represents an error that occured during a request.
-            </summary>
-        </member>
-        <member name="P:Cassandra.Connections.IRequestError.Exception">
-            <summary>
-            Exception related to this error.
-            </summary>
-        </member>
-        <member name="P:Cassandra.Connections.IRequestError.IsServerError">
-            <summary>
-            Whether this error was parsed from a server response.
-            </summary>
-        </member>
-        <member name="P:Cassandra.Connections.IRequestError.Unsent">
-            <summary>
-            Whether the request was sent or not. This error might have happened before writing
-            the request to the socket.
-            </summary>
-        </member>
         <member name="E:Cassandra.Connections.ITcpSocket.Read">
             <summary>
             Event that gets fired when new data is received.
@@ -2043,39 +1823,6 @@
             <summary>
             Sends data asynchronously
             </summary>
-        </member>
-        <member name="M:Cassandra.Connections.RequestError.CreateServerError(Cassandra.Responses.ErrorResponse)">
-            <summary>
-            Creates a server side request error based on a server error.
-            </summary>
-        </member>
-        <member name="M:Cassandra.Connections.RequestError.CreateServerError(System.Exception)">
-            <summary>
-            Creates a client side request error based on an exception.
-            </summary>
-        </member>
-        <member name="M:Cassandra.Connections.RequestError.CreateClientError(System.Exception,System.Boolean)">
-            <summary>
-            Creates a client side request error based on a exception.
-            </summary>
-        </member>
-        <member name="T:Cassandra.Connections.SniConnectionEndPoint">
-            <inheritdoc />
-        </member>
-        <member name="P:Cassandra.Connections.SniConnectionEndPoint.SocketIpEndPoint">
-            <inheritdoc />
-        </member>
-        <member name="P:Cassandra.Connections.SniConnectionEndPoint.EndpointFriendlyName">
-            <inheritdoc />
-        </member>
-        <member name="M:Cassandra.Connections.SniConnectionEndPoint.GetServerNameAsync">
-            <inheritdoc />
-        </member>
-        <member name="M:Cassandra.Connections.SniConnectionEndPoint.GetHostIpEndPointWithFallback">
-            <inheritdoc />
-        </member>
-        <member name="M:Cassandra.Connections.SniConnectionEndPoint.GetOrParseHostIpEndPoint(Cassandra.Row,Cassandra.IAddressTranslator,System.Int32)">
-            <inheritdoc />
         </member>
         <member name="T:Cassandra.Connections.TcpSocket">
             <summary>
@@ -2889,7 +2636,7 @@
             <para>Use <see cref="M:Cassandra.IStatement.EnableTracing(System.Boolean)"/> to enable tracing.</para>
             <para>
             Note that enabling query trace introduces server-side overhead by storing request information, so it's
-            recommended that you only enable query tracing when trying to identify possible issues / debugging.
+            recommended that you only enable query tracing when trying to identify possible issues / debugging. 
             </para>
             </summary>
         </member>
@@ -2998,6 +2745,11 @@
         <member name="M:Cassandra.Data.Linq.CqlExpressionVisitor.GetSelect(System.Linq.Expressions.Expression,System.Object[]@)">
             <summary>
             Gets a cql SELECT statement based on the current state
+            </summary>
+        </member>
+        <member name="M:Cassandra.Data.Linq.CqlExpressionVisitor.Escape(System.String)">
+            <summary>
+            Escapes an identifier if necessary
             </summary>
         </member>
         <member name="M:Cassandra.Data.Linq.CqlExpressionVisitor.GetDelete(System.Linq.Expressions.Expression,System.Object[]@,System.Nullable{System.DateTimeOffset},System.Boolean)">
@@ -3455,11 +3207,6 @@
             Specifies that the field or property should be ignored by Linq
             </summary>
         </member>
-        <member name="T:Cassandra.Data.Linq.IInternalStatement">
-            <summary>
-            Internal interface that exposes useful methods and properties for the driver internal components.
-            </summary>
-        </member>
         <member name="P:Cassandra.Data.Linq.ITable.Name">
             <summary>
             Gets the table name in Cassandra
@@ -3902,11 +3649,6 @@
         <member name="M:Cassandra.NoHostAvailableException.#ctor(System.String)">
             <summary>
             Creates a new instance of NoHostAvailableException with a custom message and an empty error dictionary. 
-            </summary>
-        </member>
-        <member name="M:Cassandra.NoHostAvailableException.#ctor(System.String,System.Exception)">
-            <summary>
-            Creates a new instance of NoHostAvailableException with a custom message, an empty error dictionary and an inner exception. 
             </summary>
         </member>
         <member name="T:Cassandra.OperationTimedOutException">
@@ -5114,12 +4856,6 @@
             Gets the user defined type mappings
             </summary>
         </member>
-        <member name="P:Cassandra.ISession.SessionName">
-            <summary>
-            Session name. This will be autogenerated if it is not set with <see cref="M:Cassandra.Builder.WithSessionName(System.String)"/>.
-            This is used as part of the metric bucket name, for example, which can be used to separate metric paths per session.
-            </summary>
-        </member>
         <member name="M:Cassandra.ISession.BeginExecute(Cassandra.IStatement,System.AsyncCallback,System.Object)">
             <summary>
             Begins asynchronous execute operation.
@@ -5272,11 +5008,6 @@
             </summary>
             <param name="cqlQuery">cql query to prepare</param>
             <param name="customPayload">Custom outgoing payload to send with the prepare request</param>
-        </member>
-        <member name="M:Cassandra.ISession.GetMetrics">
-            <summary>
-            Retrieves the driver metrics for this session.
-            </summary>
         </member>
         <member name="T:Cassandra.ISessionState">
             <summary>
@@ -8061,6 +7792,11 @@
             Adds "SELECT columnlist" and "FROM tablename" to a CQL statement if they don't already exist for a POCO of Type T.
             </summary>
         </member>
+        <member name="M:Cassandra.Mapping.Statements.CqlGenerator.Escape(System.String,Cassandra.Mapping.PocoData)">
+            <summary>
+            Escapes an identier if necessary
+            </summary>
+        </member>
         <member name="M:Cassandra.Mapping.Statements.CqlGenerator.GenerateInsert``1(System.Boolean,System.Object[],System.Object[]@,System.Boolean,System.Nullable{System.Int32},System.Nullable{System.DateTimeOffset},System.String)">
             <summary>
             Generates an "INSERT INTO tablename (columns) VALUES (?...)" statement for a POCO of Type T.
@@ -8265,11 +8001,6 @@
             Converts an IEnumerable&lt;string&gt; to a comma-delimited string.
             </summary>
         </member>
-        <member name="T:Cassandra.Mapping.Utils.ICqlIdentifierHelper">
-            <summary>
-            Helper component that can be used to escape identifiers when they are reserved keywords in the CQL protocol.
-            </summary>
-        </member>
         <member name="T:Cassandra.Mapping.Utils.LookupKeyedCollection`2">
             <summary>
             A concrete implementation of System.Collections.ObjectModel.KeyedCollection which acts as a List/Dictionary hybrid where
@@ -8297,11 +8028,6 @@
              Returns the name of currently connected cluster.
             </summary>
             <returns>the Cassandra name of currently connected cluster.</returns>
-        </member>
-        <member name="P:Cassandra.Metadata.IsDbaas">
-            <summary>
-            Determines whether the cluster is provided as a service (DataStax Apollo).
-            </summary>
         </member>
         <member name="P:Cassandra.Metadata.Configuration">
             <summary>
@@ -8426,7 +8152,7 @@
             Once they have settled on a common version, we say that they are in agreement.
             <para/>
             This method does not perform retries so
-            <see cref="P:Cassandra.ProtocolOptions.MaxSchemaAgreementWaitSeconds"/> does not apply.
+            <see cref="P:Cassandra.ProtocolOptions.MaxSchemaAgreementWaitSeconds"/> does not apply. 
             </summary>
             <returns>True if schema agreement was successful and false if it was not successful.</returns>
         </member>
@@ -8555,597 +8281,10 @@
             </para>
             </summary>
         </member>
-        <member name="T:Cassandra.Metrics.Abstractions.IDriverCounter">
-            <summary>
-            Represents a metric of type Counter.
-            </summary>
-        </member>
-        <member name="T:Cassandra.Metrics.Abstractions.IDriverGauge">
-            <summary>
-            Represents a metric of type Gauge.
-            </summary>
-        </member>
-        <member name="T:Cassandra.Metrics.Abstractions.IDriverMeter">
-            <summary>
-            Represents a metric of type Meter.
-            </summary>
-        </member>
-        <member name="T:Cassandra.Metrics.Abstractions.IDriverMetric">
-            <summary>
-            Represents an individual metric. Every metric type implements this interface:
-            <see cref="T:Cassandra.Metrics.Abstractions.IDriverGauge"/>, <see cref="T:Cassandra.Metrics.Abstractions.IDriverMetric"/>, <see cref="T:Cassandra.Metrics.Abstractions.IDriverTimer"/>, <see cref="T:Cassandra.Metrics.Abstractions.IDriverCounter"/>.
-            </summary>
-        </member>
-        <member name="T:Cassandra.Metrics.Abstractions.IDriverMetricsProvider">
-            <summary>
-            Provides metric implementations.
-            </summary>
-        </member>
-        <member name="M:Cassandra.Metrics.Abstractions.IDriverMetricsProvider.Timer(System.String,Cassandra.Metrics.IMetric)">
-            <summary>
-            Creates a timer metric. <paramref name="bucket"/> will contain the prefix configured with <see cref="M:Cassandra.Metrics.DriverMetricsOptions.SetBucketPrefix(System.String)"/>,
-            session name and node's address. Node's address will only be in the bucket name when <paramref name="metric"/> is a <see cref="T:Cassandra.Metrics.NodeMetric"/>.
-            Implementations can call <see cref="M:System.Object.Equals(System.Object)"/> to test if <paramref name="metric"/> is a particular <see cref="T:Cassandra.Metrics.NodeMetric"/> or <see cref="T:Cassandra.Metrics.SessionMetric"/>.
-            </summary>
-        </member>
-        <member name="M:Cassandra.Metrics.Abstractions.IDriverMetricsProvider.Meter(System.String,Cassandra.Metrics.IMetric)">
-            <summary>
-            Creates a meter metric. <paramref name="bucket"/> will contain the prefix configured with <see cref="M:Cassandra.Metrics.DriverMetricsOptions.SetBucketPrefix(System.String)"/>,
-            session name and node's address. Node's address will only be in the bucket name when <paramref name="metric"/> is a <see cref="T:Cassandra.Metrics.NodeMetric"/>.
-            Implementations can call <see cref="M:System.Object.Equals(System.Object)"/> to test if <paramref name="metric"/> is a particular <see cref="T:Cassandra.Metrics.NodeMetric"/> or <see cref="T:Cassandra.Metrics.SessionMetric"/>.
-            </summary>
-        </member>
-        <member name="M:Cassandra.Metrics.Abstractions.IDriverMetricsProvider.Counter(System.String,Cassandra.Metrics.IMetric)">
-            <summary>
-            Creates a counter metric. <paramref name="bucket"/> will contain the prefix configured with <see cref="M:Cassandra.Metrics.DriverMetricsOptions.SetBucketPrefix(System.String)"/>,
-            session name and node's address. Node's address will only be in the bucket name when <paramref name="metric"/> is a <see cref="T:Cassandra.Metrics.NodeMetric"/>.
-            Implementations can call <see cref="M:System.Object.Equals(System.Object)"/> to test if <paramref name="metric"/> is a particular <see cref="T:Cassandra.Metrics.NodeMetric"/> or <see cref="T:Cassandra.Metrics.SessionMetric"/>.
-            </summary>
-        </member>
-        <member name="M:Cassandra.Metrics.Abstractions.IDriverMetricsProvider.Gauge(System.String,Cassandra.Metrics.IMetric,System.Func{System.Nullable{System.Double}})">
-            <summary>
-            Creates a gauge metric. <paramref name="bucket"/> will contain the prefix configured with <see cref="M:Cassandra.Metrics.DriverMetricsOptions.SetBucketPrefix(System.String)"/>,
-            session name and node's address. Node's address will only be in the bucket name when <paramref name="metric"/> is a <see cref="T:Cassandra.Metrics.NodeMetric"/>.
-            Implementations can call <see cref="M:System.Object.Equals(System.Object)"/> to test if <paramref name="metric"/> is a particular <see cref="T:Cassandra.Metrics.NodeMetric"/> or <see cref="T:Cassandra.Metrics.SessionMetric"/>.
-            </summary>
-        </member>
-        <member name="M:Cassandra.Metrics.Abstractions.IDriverMetricsProvider.ShutdownMetricsBucket(System.String)">
-            <summary>
-            Shutdowns/Disposes metrics created with the provided <paramref name="bucket"/>. This is especially useful to stop gauges which are supposed to run on a loop.
-            </summary>
-        </member>
-        <member name="T:Cassandra.Metrics.Abstractions.IDriverTimer">
-            <summary>
-            A <see cref="T:Cassandra.Metrics.Abstractions.IDriverTimer"/> is a combination of a Histogram and a <see cref="T:Cassandra.Metrics.Abstractions.IDriverMeter"/>
-            allowing us to measure the duration of a type of event, the rate of its occurrence and provide duration statistics,
-            for example tracking the time it takes to execute a particular CQL request.
-            </summary>
-        </member>
-        <member name="M:Cassandra.Metrics.Abstractions.IDriverTimer.Record(System.Int64)">
-            <summary>
-            Records an individual measurement in nanoseconds.
-            </summary>
-        </member>
-        <member name="T:Cassandra.Metrics.DriverMetricsOptions">
-            <summary>
-            This class is used to customize options related to Metrics. It is used in 
-            <see cref="M:Cassandra.Builder.WithMetrics(Cassandra.Metrics.Abstractions.IDriverMetricsProvider,Cassandra.Metrics.DriverMetricsOptions)"/>.
-            </summary>
-        </member>
-        <member name="P:Cassandra.Metrics.DriverMetricsOptions.EnabledNodeMetrics">
-            <summary>
-            See <see cref="M:Cassandra.Metrics.DriverMetricsOptions.SetEnabledNodeMetrics(System.Collections.Generic.IEnumerable{Cassandra.Metrics.NodeMetric})"/> for more information. Defaults to <see cref="F:Cassandra.Metrics.NodeMetric.DefaultNodeMetrics"/>.
-            </summary>
-        </member>
-        <member name="P:Cassandra.Metrics.DriverMetricsOptions.EnabledSessionMetrics">
-            <summary>
-            See <see cref="M:Cassandra.Metrics.DriverMetricsOptions.SetEnabledSessionMetrics(System.Collections.Generic.IEnumerable{Cassandra.Metrics.SessionMetric})"/> for more information. Defaults to <see cref="F:Cassandra.Metrics.SessionMetric.DefaultSessionMetrics"/>.
-            </summary>
-        </member>
-        <member name="P:Cassandra.Metrics.DriverMetricsOptions.BucketPrefix">
-            <summary>
-            See <see cref="M:Cassandra.Metrics.DriverMetricsOptions.SetBucketPrefix(System.String)"/> for more information.
-            </summary>
-        </member>
-        <member name="M:Cassandra.Metrics.DriverMetricsOptions.#ctor">
-            <summary>
-            Builds an instance with the default options. Check each method's API docs for information about the default value for each option.
-            </summary>
-        </member>
-        <member name="M:Cassandra.Metrics.DriverMetricsOptions.SetEnabledNodeMetrics(System.Collections.Generic.IEnumerable{Cassandra.Metrics.NodeMetric})">
-            <summary>
-            Enables specific node metrics. The available node metrics can be found as static readonly properties in
-            the <see cref="T:Cassandra.Metrics.NodeMetric"/> class, e.g., <see cref="F:Cassandra.Metrics.NodeMetric.Meters.BytesSent"/>.
-            There is also a property that returns a collection with the default node metrics (<see cref="F:Cassandra.Metrics.NodeMetric.DefaultNodeMetrics"/>)
-            and one with all node metrics (<see cref="F:Cassandra.Metrics.NodeMetric.AllNodeMetrics"/>).
-            </summary>
-            <returns>This instance.</returns>
-        </member>
-        <member name="M:Cassandra.Metrics.DriverMetricsOptions.SetEnabledSessionMetrics(System.Collections.Generic.IEnumerable{Cassandra.Metrics.SessionMetric})">
-            <summary>
-            Enables specific session metrics. The available session metrics can be found as static readonly properties in
-            the <see cref="T:Cassandra.Metrics.SessionMetric"/> class, e.g., <see cref="F:Cassandra.Metrics.SessionMetric.Meters.BytesSent"/>.
-            There is also a property that returns a collection with the default session metrics (<see cref="F:Cassandra.Metrics.SessionMetric.DefaultSessionMetrics"/>)
-            and one with all session metrics (<see cref="F:Cassandra.Metrics.SessionMetric.AllSessionMetrics"/>).
-            </summary>
-            <returns>This instance.</returns>
-        </member>
-        <member name="M:Cassandra.Metrics.DriverMetricsOptions.SetBucketPrefix(System.String)">
-             <summary>
-             Prepends a prefix to the bucket name for all metrics. The way the bucket name and metric name parameters
-             are used depends on the <see cref="T:Cassandra.Metrics.Abstractions.IDriverMetricsProvider"/> that is provided to the builder.
-             In the case of the provider based on App.Metrics available in the CassandraCSharpDriver.AppMetrics package,
-             the bucket name will be concatenated with the metric name (separated by a dot), which makes the full metric path like this:
-             <code>
-             Format: &lt;bucket-prefix&gt;.&lt;bucket-name&gt;.&lt;metric-name&gt;
-             </code>
-             Here is how the full metric path will look like for <see cref="F:Cassandra.Metrics.NodeMetric.Counters.Retries"/> in practice with the AppMetrics provider:
-             <code>
-             // Set metric prefix
-             var cluster = 
-                 Cluster.Builder()
-                        .AddContactPoint("127.0.0.1")
-                        .WithSessionName("session")
-                        .WithMetrics(
-                            metrics.CreateDriverMetricsProvider(),
-                            new DriverMetricsOptions().SetBucketPrefix("web.app"))
-                        .Build();
-            
-             // Resulting metric name for the NodeMetric.Counters.Retries metric:
-             web.app.session.nodes.127_0_0_1:9042.retries.total
-             </code>
-             </summary>
-        </member>
-        <member name="T:Cassandra.Metrics.IDriverMetrics">
-            <summary>
-            Exposes driver metrics.
-            </summary>
-        </member>
-        <member name="P:Cassandra.Metrics.IDriverMetrics.SessionMetrics">
-            <summary>
-            Exposes session metrics for the session from which this instance was retrieved. See <see cref="M:Cassandra.ISession.GetMetrics"/>.
-            </summary>
-        </member>
-        <member name="P:Cassandra.Metrics.IDriverMetrics.NodeMetrics">
-            <summary>
-            Exposes node metrics for the hosts used in requests executed by the session
-            from which this instance was retrieved. See <see cref="M:Cassandra.ISession.GetMetrics"/>.
-            </summary>
-        </member>
-        <member name="M:Cassandra.Metrics.IDriverMetrics.GetNodeMetric``1(Cassandra.Host,Cassandra.Metrics.NodeMetric)">
-            <summary>
-            Gets a specific node metric of a specific host. <typeparamref name="TMetricType"/> can be any type in the
-            inheritance tree of the metric object returned by the <see cref="T:Cassandra.Metrics.Abstractions.IDriverMetricsProvider"/>.
-            </summary>
-            <exception cref="T:System.ArgumentException">This exception is thrown if the metric object can not be cast to <typeparamref name="TMetricType"/>.</exception>
-        </member>
-        <member name="M:Cassandra.Metrics.IDriverMetrics.GetSessionMetric``1(Cassandra.Metrics.SessionMetric)">
-            <summary>
-            Gets a specific session metric. <typeparamref name="TMetricType"/> can be any type in the
-            inheritance tree of the metric object returned by the <see cref="T:Cassandra.Metrics.Abstractions.IDriverMetricsProvider"/>.
-            </summary>
-            <exception cref="T:System.ArgumentException">This exception is thrown if the metric object can not be cast to <typeparamref name="TMetricType"/>.</exception>
-        </member>
-        <member name="T:Cassandra.Metrics.IMetric">
-            <summary>
-            Interface implemented by <see cref="T:Cassandra.Metrics.NodeMetric"/> and <see cref="T:Cassandra.Metrics.SessionMetric"/>.
-            </summary>
-        </member>
-        <member name="P:Cassandra.Metrics.IMetric.Name">
-            <summary>
-            Metric name.
-            </summary>
-        </member>
-        <member name="T:Cassandra.Metrics.IMetricsRegistry`1">
-            <summary>
-            Metrics Registry.
-            </summary>
-            <typeparam name="TMetric">Should be <see cref="T:Cassandra.Metrics.NodeMetric"/> out <see cref="T:Cassandra.Metrics.SessionMetric"/>.</typeparam>
-        </member>
-        <member name="P:Cassandra.Metrics.IMetricsRegistry`1.Counters">
-            <summary>
-            Dictionary with counter metrics.
-            </summary>
-        </member>
-        <member name="P:Cassandra.Metrics.IMetricsRegistry`1.Gauges">
-            <summary>
-            Dictionary with gauge metrics.
-            </summary>
-        </member>
-        <member name="P:Cassandra.Metrics.IMetricsRegistry`1.Meters">
-            <summary>
-            Dictionary with meter metrics.
-            </summary>
-        </member>
-        <member name="P:Cassandra.Metrics.IMetricsRegistry`1.Timers">
-            <summary>
-            Dictionary with timer metrics.
-            </summary>
-        </member>
-        <member name="P:Cassandra.Metrics.IMetricsRegistry`1.Metrics">
-            <summary>
-            Dictionary with metrics of all types. The values can be cast to the appropriate type interface
-            (or the implementation that is provider specific).
-            </summary>
-        </member>
-        <member name="T:Cassandra.Metrics.Internal.IMetricsManager">
-            <summary>
-            Implements <see cref="T:Cassandra.Metrics.IDriverMetrics"/> and exposes methods for the driver internals to update metrics.
-            </summary>
-        </member>
-        <member name="M:Cassandra.Metrics.Internal.IMetricsManager.GetOrCreateNodeMetrics(Cassandra.Host)">
-            <summary>
-            Get the existing node metrics for the provided host or creates them and returns them if they don't exist yet.
-            </summary>
-        </member>
-        <member name="M:Cassandra.Metrics.Internal.IMetricsManager.InitializeMetrics(Cassandra.SessionManagement.IInternalSession)">
-            <summary>
-            Initialize metrics with the provided session.
-            </summary>
-        </member>
-        <member name="M:Cassandra.Metrics.Internal.IMetricsManager.RemoveNodeMetrics(Cassandra.Host)">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:Cassandra.Metrics.Internal.IMetricsManager.AreSessionTimerMetricsEnabled">
-            <summary>
-            Whether SessionMetrics of type Timer are enabled.
-            </summary>
-        </member>
-        <member name="P:Cassandra.Metrics.Internal.IMetricsManager.AreNodeTimerMetricsEnabled">
-            <summary>
-            Whether NodeMetrics of type Timer are enabled.
-            </summary>
-        </member>
-        <member name="P:Cassandra.Metrics.Internal.IMetricsManager.AreMetricsEnabled">
-            <summary>
-            Whether metrics are enabled.
-            </summary>
-        </member>
-        <member name="T:Cassandra.Metrics.Internal.MetricsManager">
-            <inheritdoc />
-        </member>
-        <member name="P:Cassandra.Metrics.Internal.MetricsManager.SessionMetrics">
-            <inheritdoc/>
-        </member>
-        <member name="P:Cassandra.Metrics.Internal.MetricsManager.NodeMetrics">
-            <inheritdoc/>
-        </member>
-        <member name="P:Cassandra.Metrics.Internal.MetricsManager.AreMetricsEnabled">
-            <inheritdoc/>
-        </member>
-        <member name="M:Cassandra.Metrics.Internal.MetricsManager.GetNodeMetric``1(Cassandra.Host,Cassandra.Metrics.NodeMetric)">
-            <inheritdoc />
-        </member>
-        <member name="M:Cassandra.Metrics.Internal.MetricsManager.GetSessionMetric``1(Cassandra.Metrics.SessionMetric)">
-            <inheritdoc />
-        </member>
-        <member name="M:Cassandra.Metrics.Internal.MetricsManager.InitializeMetrics(Cassandra.SessionManagement.IInternalSession)">
-            <inheritdoc />
-        </member>
-        <member name="M:Cassandra.Metrics.Internal.MetricsManager.RemoveNodeMetrics(Cassandra.Host)">
-            <inheritdoc />
-        </member>
-        <member name="P:Cassandra.Metrics.Internal.MetricsManager.AreSessionTimerMetricsEnabled">
-            <inheritdoc />
-        </member>
-        <member name="P:Cassandra.Metrics.Internal.MetricsManager.AreNodeTimerMetricsEnabled">
-            <inheritdoc />
-        </member>
-        <member name="M:Cassandra.Metrics.Internal.MetricsManager.GetSessionMetrics">
-            <inheritdoc />
-        </member>
-        <member name="M:Cassandra.Metrics.Internal.MetricsManager.GetOrCreateNodeMetrics(Cassandra.Host)">
-            <inheritdoc />
-        </member>
-        <member name="T:Cassandra.Metrics.NodeMetric">
-            <summary>
-            Represents an individual node metric.
-            </summary>
-        </member>
-        <member name="P:Cassandra.Metrics.NodeMetric.Name">
-            <summary>
-            Metric name. For example, <see cref="F:Cassandra.Metrics.NodeMetric.Gauges.OpenConnections"/> returns "pool.open-connections".
-            </summary>
-        </member>
-        <member name="F:Cassandra.Metrics.NodeMetric.DefaultNodeMetrics">
-            <summary>
-            A collection with all node metrics except Timers.
-            </summary>
-        </member>
-        <member name="F:Cassandra.Metrics.NodeMetric.AllNodeMetrics">
-            <summary>
-            A collection with all node metrics including Timers.
-            </summary>
-        </member>
-        <member name="F:Cassandra.Metrics.NodeMetric.Counters.SpeculativeExecutions">
-            <summary>
-            Number of speculative executions.
-            </summary>
-        </member>
-        <member name="F:Cassandra.Metrics.NodeMetric.Counters.ConnectionInitErrors">
-            <summary>
-            Connection initialization errors.
-            </summary>
-        </member>
-        <member name="F:Cassandra.Metrics.NodeMetric.Counters.AuthenticationErrors">
-            <summary>
-            Connection authentication errors.
-            </summary>
-        </member>
-        <member name="F:Cassandra.Metrics.NodeMetric.Counters.RetriesOnReadTimeout">
-            <summary>
-            Retried attempts on read timeouts due to the retry policy.
-            </summary>
-        </member>
-        <member name="F:Cassandra.Metrics.NodeMetric.Counters.RetriesOnWriteTimeout">
-            <summary>
-            Retried attempts on write timeouts due to the retry policy.
-            </summary>
-        </member>
-        <member name="F:Cassandra.Metrics.NodeMetric.Counters.RetriesOnUnavailable">
-            <summary>
-            Retried attempts on unavailable errors due to the retry policy.
-            </summary>
-        </member>
-        <member name="F:Cassandra.Metrics.NodeMetric.Counters.RetriesOnOtherError">
-            <summary>
-            Retried attempts on errors other than read timeouts, write timeouts and unavailable errors due to the retry policy.
-            </summary>
-        </member>
-        <member name="F:Cassandra.Metrics.NodeMetric.Counters.Retries">
-            <summary>
-            Total retry attempts due to the retry policy.
-            </summary>
-        </member>
-        <member name="F:Cassandra.Metrics.NodeMetric.Counters.IgnoresOnReadTimeout">
-            <summary>
-            Ignored read timeouts due to the retry policy.
-            </summary>
-        </member>
-        <member name="F:Cassandra.Metrics.NodeMetric.Counters.IgnoresOnWriteTimeout">
-            <summary>
-            Ignored write timeouts due to the retry policy.
-            </summary>
-        </member>
-        <member name="F:Cassandra.Metrics.NodeMetric.Counters.IgnoresOnUnavailable">
-            <summary>
-            Ignored unavailable errors due to the retry policy.
-            </summary>
-        </member>
-        <member name="F:Cassandra.Metrics.NodeMetric.Counters.IgnoresOnOtherError">
-            <summary>
-            Ignored errors other than read timeouts, write timeouts and unavailable errors due to the retry policy.
-            </summary>
-        </member>
-        <member name="F:Cassandra.Metrics.NodeMetric.Counters.Ignores">
-            <summary>
-            Total ignored errors due to the retry policy.
-            </summary>
-        </member>
-        <member name="F:Cassandra.Metrics.NodeMetric.Counters.ReadTimeouts">
-            <summary>
-            Number of server side read timeout errors.
-            </summary>
-        </member>
-        <member name="F:Cassandra.Metrics.NodeMetric.Counters.WriteTimeouts">
-            <summary>
-            Number of server side write timeout errors.
-            </summary>
-        </member>
-        <member name="F:Cassandra.Metrics.NodeMetric.Counters.UnavailableErrors">
-            <summary>
-            Number of server side unavailable errors.
-            </summary>
-        </member>
-        <member name="F:Cassandra.Metrics.NodeMetric.Counters.OtherErrors">
-            <summary>
-            Number of server side errors other than Unavailable, ReadTimeout or WriteTimeout.
-            </summary>
-        </member>
-        <member name="F:Cassandra.Metrics.NodeMetric.Counters.AbortedRequests">
-            <summary>
-            Number of failed requests without a server response.
-            </summary>
-        </member>
-        <member name="F:Cassandra.Metrics.NodeMetric.Counters.UnsentRequests">
-            <summary>
-            Number of requests that failed before being sent to the server.
-            </summary>
-        </member>
-        <member name="F:Cassandra.Metrics.NodeMetric.Counters.ClientTimeouts">
-            <summary>
-            Number of failed requests due to socket timeout.
-            </summary>
-        </member>
-        <member name="F:Cassandra.Metrics.NodeMetric.Gauges.OpenConnections">
-            <summary>
-            Number of open connections.
-            </summary>
-        </member>
-        <member name="F:Cassandra.Metrics.NodeMetric.Gauges.InFlight">
-            <summary>
-            Number of in flight requests.
-            </summary>
-        </member>
-        <member name="F:Cassandra.Metrics.NodeMetric.Timers.CqlMessages">
-            <summary>
-            Timer that tracks the number/rate of cql requests and the time they take.
-            </summary>
-        </member>
-        <member name="F:Cassandra.Metrics.NodeMetric.Meters.BytesSent">
-            <summary>
-            Meter that tracks the number/rate of bytes sent.
-            </summary>
-        </member>
-        <member name="F:Cassandra.Metrics.NodeMetric.Meters.BytesReceived">
-            <summary>
-            Meter that tracks the number/rate of bytes received.
-            </summary>
-        </member>
-        <member name="T:Cassandra.Metrics.Providers.Null.NullDriverTimer">
-            <inheritdoc cref="T:Cassandra.Metrics.Abstractions.IDriverTimer" />
-        </member>
-        <member name="T:Cassandra.Metrics.Registries.IInternalMetricsRegistry`1">
-            <summary>
-            Internal metrics registry that creates metrics (using the configured <see cref="T:Cassandra.Metrics.Abstractions.IDriverMetricsProvider"/>).
-            Also filters the metrics and returns a null implementation if the metric is disabled.
-            </summary>
-            <typeparam name="TMetric"></typeparam>
-        </member>
-        <member name="M:Cassandra.Metrics.Registries.IInternalMetricsRegistry`1.OnMetricsAdded">
-            <summary>
-            Used to notify the registry that no more metrics will be added. (Concurrency optimization).
-            </summary>
-        </member>
-        <member name="T:Cassandra.Metrics.Registries.INodeMetrics">
-            <summary>
-            Exposes specific node metrics for the driver internals.
-            </summary>
-        </member>
-        <member name="P:Cassandra.Metrics.Registries.INodeMetrics.MetricsRegistry">
-            <summary>
-            Internal MetricsRegistry used to create metrics internally.
-            </summary>
-        </member>
-        <member name="M:Cassandra.Metrics.Registries.INodeMetrics.InitializePoolGauges(Cassandra.Connections.IHostConnectionPool)">
-            <summary>
-            Initialize gauge metrics with a specific connection pool.
-            </summary>
-            <param name="pool"></param>
-        </member>
-        <member name="T:Cassandra.Metrics.Registries.InternalMetricsRegistry`1">
-            <inheritdoc />
-        </member>
-        <member name="P:Cassandra.Metrics.Registries.InternalMetricsRegistry`1.Counters">
-            <inheritdoc />
-        </member>
-        <member name="P:Cassandra.Metrics.Registries.InternalMetricsRegistry`1.Gauges">
-            <inheritdoc />
-        </member>
-        <member name="P:Cassandra.Metrics.Registries.InternalMetricsRegistry`1.Meters">
-            <inheritdoc />
-        </member>
-        <member name="P:Cassandra.Metrics.Registries.InternalMetricsRegistry`1.Timers">
-            <inheritdoc />
-        </member>
-        <member name="P:Cassandra.Metrics.Registries.InternalMetricsRegistry`1.Metrics">
-            <inheritdoc />
-        </member>
-        <member name="M:Cassandra.Metrics.Registries.InternalMetricsRegistry`1.OnMetricsAdded">
-            <inheritdoc />
-        </member>
-        <member name="T:Cassandra.Metrics.Registries.IRequestErrorMetrics">
-            <summary>
-            Exposes request error metrics.
-            </summary>
-        </member>
-        <member name="T:Cassandra.Metrics.Registries.IRetryPolicyMetrics">
-            <summary>
-            Exposes metrics related to outcomes decided by retry policies.
-            </summary>
-        </member>
-        <member name="T:Cassandra.Metrics.Registries.ISessionMetrics">
-            <summary>
-            Exposes specific session metrics for the driver internals.
-            </summary>
-        </member>
-        <member name="P:Cassandra.Metrics.Registries.ISessionMetrics.MetricsRegistry">
-            <summary>
-            Internal MetricsRegistry used to create metrics internally.
-            </summary>
-        </member>
-        <member name="T:Cassandra.Metrics.Registries.NodeMetrics">
-            <inheritdoc />
-        </member>
-        <member name="P:Cassandra.Metrics.Registries.NodeMetrics.MetricsRegistry">
-            <inheritdoc />
-        </member>
-        <member name="M:Cassandra.Metrics.Registries.NodeMetrics.InitializePoolGauges(Cassandra.Connections.IHostConnectionPool)">
-            <inheritdoc />
-        </member>
-        <member name="T:Cassandra.Metrics.Registries.SessionMetrics">
-            <inheritdoc />
-        </member>
-        <member name="P:Cassandra.Metrics.Registries.SessionMetrics.MetricsRegistry">
-            <inheritdoc />
-        </member>
-        <member name="T:Cassandra.Metrics.SessionMetric">
-            <summary>
-            Represents an individual session metric.
-            </summary>
-        </member>
-        <member name="P:Cassandra.Metrics.SessionMetric.Name">
-            <summary>
-            Metric name. For example, <see cref="F:Cassandra.Metrics.SessionMetric.Counters.CqlClientTimeouts"/> returns "cql-client-timeouts".
-            </summary>
-        </member>
-        <member name="F:Cassandra.Metrics.SessionMetric.DefaultSessionMetrics">
-            <summary>
-            A collection with all session metrics except Timers.
-            </summary>
-        </member>
-        <member name="F:Cassandra.Metrics.SessionMetric.AllSessionMetrics">
-            <summary>
-            A collection with all session metrics including Timers.
-            </summary>
-        </member>
-        <member name="F:Cassandra.Metrics.SessionMetric.Timers.CqlRequests">
-            <summary>
-            Tracks the number/rate and latency of cql requests.
-            </summary>
-        </member>
-        <member name="F:Cassandra.Metrics.SessionMetric.Meters.BytesSent">
-            <summary>
-            Tracks the number/rate of bytes sent.
-            </summary>
-        </member>
-        <member name="F:Cassandra.Metrics.SessionMetric.Meters.BytesReceived">
-            <summary>
-            Tracks the number/rate of bytes received.
-            </summary>
-        </member>
-        <member name="F:Cassandra.Metrics.SessionMetric.Counters.CqlClientTimeouts">
-            <summary>
-            Number of client timeouts (timeout that affects the synchronous API only, see <see cref="M:Cassandra.Builder.WithQueryTimeout(System.Int32)"/>).
-            </summary>
-        </member>
-        <member name="F:Cassandra.Metrics.SessionMetric.Gauges.ConnectedNodes">
-            <summary>
-            Number of connected hosts.
-            </summary>
-        </member>
         <member name="T:Cassandra.NoneAuthProvider">
             <summary>
              A provider that provides no authentication capability. <p> This is only
              useful as a placeholder when no authentication is to be used. </p>
-            </summary>
-        </member>
-        <member name="T:Cassandra.Observers.Abstractions.IConnectionObserver">
-            <summary>
-            Observer with handlers for connection events, used for metrics for example.
-            </summary>
-        </member>
-        <member name="M:Cassandra.Observers.Abstractions.IConnectionObserver.CreateOperationObserver">
-            <summary>
-            Creates an operation observer for an operation associated with the connection that is being observed by
-            this instance.
-            </summary>
-        </member>
-        <member name="T:Cassandra.Observers.Abstractions.IObserverFactory">
-            <summary>
-            Factory to create high level observers.
-            </summary>
-        </member>
-        <member name="T:Cassandra.Observers.Abstractions.IOperationObserver">
-            <summary>
-            Exposes callbacks to handle a couple of events related to <see cref="T:Cassandra.OperationState"/>.
-            </summary>
-        </member>
-        <member name="T:Cassandra.Observers.Abstractions.IRequestObserver">
-            <summary>
-            Exposes callbacks for events related to <see cref="T:Cassandra.Requests.IRequestExecution"/> and <see cref="T:Cassandra.Requests.IRequestHandler"/>.
             </summary>
         </member>
         <member name="T:Cassandra.OperationState">
@@ -9153,12 +8292,17 @@
             Represents the state of the ongoing operation for the Connection
             </summary>
         </member>
+        <member name="P:Cassandra.OperationState.Header">
+            <summary>
+            8 byte header of the frame
+            </summary>
+        </member>
         <member name="P:Cassandra.OperationState.TimeoutMillis">
             <summary>
             Gets or sets the timeout in milliseconds for the request.
             </summary>
         </member>
-        <member name="M:Cassandra.OperationState.#ctor(System.Action{Cassandra.Connections.IRequestError,Cassandra.Responses.Response},Cassandra.Requests.IRequest,System.Int32,Cassandra.Observers.Abstractions.IOperationObserver)">
+        <member name="M:Cassandra.OperationState.#ctor(System.Action{System.Exception,Cassandra.Responses.Response})">
             <summary>
             Creates a new operation state with the provided callback
             </summary>
@@ -9175,13 +8319,13 @@
             might be already called.
             </summary>
         </member>
-        <member name="M:Cassandra.OperationState.InvokeCallback(Cassandra.Connections.IRequestError,System.Int64)">
+        <member name="M:Cassandra.OperationState.InvokeCallback(System.Exception)">
             <summary>
             Marks this operation as completed and invokes the callback with the exception using the default task scheduler.
             Its safe to call this method multiple times as the underlying callback will be invoked just once.
             </summary>
         </member>
-        <member name="M:Cassandra.OperationState.MarkAsTimedOut(Cassandra.OperationTimedOutException,System.Action,System.Int64)">
+        <member name="M:Cassandra.OperationState.MarkAsTimedOut(Cassandra.OperationTimedOutException,System.Action)">
             <summary>
             Marks this operation as timed-out, callbacks with the exception 
             and sets a handler when the response is received
@@ -9192,7 +8336,7 @@
             Removes the context associated with this request, if possible
             </summary>
         </member>
-        <member name="M:Cassandra.OperationState.CallbackMultiple(System.Collections.Generic.IEnumerable{Cassandra.OperationState},Cassandra.Connections.IRequestError,System.Int64)">
+        <member name="M:Cassandra.OperationState.CallbackMultiple(System.Collections.Generic.IEnumerable{Cassandra.OperationState},System.Exception)">
             <summary>
             Asynchronously marks the provided operations as completed and invoke the callbacks with the exception.
             </summary>
@@ -9239,11 +8383,6 @@
             </summary>
             <param name="username"> to use for authentication requests </param>
             <param name="password"> to use for authentication requests</param>
-        </member>
-        <member name="P:Cassandra.PlainTextAuthProvider.Username">
-            <summary>
-            For testing purposes.
-            </summary>
         </member>
         <member name="M:Cassandra.PlainTextAuthProvider.NewAuthenticator(System.Net.IPEndPoint)">
             <summary>
@@ -10124,24 +9263,10 @@
         </member>
         <member name="P:Cassandra.Policies.DefaultLoadBalancingPolicy">
             <summary>
-            <para>
-            DEPRECATED: 
-            </para>
-            <para>
-            The default load balancing policy.
-            </para>  
+             The default load balancing policy. 
             <para> 
             The default load balancing policy is <see cref="T:Cassandra.TokenAwarePolicy"/> with <see cref="T:Cassandra.DCAwareRoundRobinPolicy"/> as child policy.
             </para>
-            </summary>
-        </member>
-        <member name="M:Cassandra.Policies.NewDefaultLoadBalancingPolicy(System.String)">
-            <summary>
-            Creates a new instance of the default load balancing policy with the provided local datacenter.
-            This is equivalent to:
-            <code>
-            new TokenAwarePolicy(new DCAwareRoundRobinPolicy(localDc))
-            </code>
             </summary>
         </member>
         <member name="P:Cassandra.Policies.DefaultReconnectionPolicy">
@@ -11095,7 +10220,6 @@
         <member name="F:Cassandra.QueryOptions.DefaultConsistencyLevel">
             <summary>
             The default consistency level for queries: <c>ConsistencyLevel.LocalOne</c>.
-            For DataStax Apollo, this constant should be ignored as the default is LocalQuorum.
             </summary>    
         </member>
         <member name="F:Cassandra.QueryOptions.DefaultSerialConsistencyLevel">
@@ -11539,12 +10663,6 @@
             Builds the Request to send to a cassandra node based on the statement type
             </summary>
         </member>
-        <member name="T:Cassandra.Requests.IRequestResultHandler">
-            <summary>
-            Component used by <see cref="T:Cassandra.Requests.IRequestHandler"/> and <see cref="T:Cassandra.Requests.IRequestExecution"/> to store the result
-            of a request and expose an awaitable task that will be complete when the request is complete.
-            </summary>
-        </member>
         <member name="M:Cassandra.Requests.PrepareHandler.CanBeRetried(System.Exception)">
             <summary>
             Determines if the request can be retried on the next node, based on the exception information.
@@ -11586,14 +10704,14 @@
             <param name="validHost">First host to which the method tries to obtain a connection.</param>
             <returns></returns>
         </member>
-        <member name="M:Cassandra.Requests.RequestExecution.RetryExecution(System.Boolean,Cassandra.Host)">
+        <member name="M:Cassandra.Requests.RequestExecution.RetryExecution(System.Boolean)">
             <summary>
             Useful method to retry the execution safely. While <see cref="M:Cassandra.Requests.RequestExecution.Start(System.Boolean)"/> throws exceptions,
             this method catches them and marks the <see cref="F:Cassandra.Requests.RequestExecution._parent"/> request as complete,
             making it suitable to be called in a fire and forget manner.
             </summary>
         </member>
-        <member name="M:Cassandra.Requests.RequestExecution.Send(Cassandra.Requests.IRequest,Cassandra.Host,System.Action{Cassandra.Connections.IRequestError,Cassandra.Responses.Response,Cassandra.Host})">
+        <member name="M:Cassandra.Requests.RequestExecution.Send(Cassandra.Requests.IRequest,System.Action{System.Exception,Cassandra.Responses.Response})">
             <summary>
             Sends a new request using the active connection
             </summary>
@@ -11603,22 +10721,22 @@
             Fills the common properties of the RowSet
             </summary>
         </member>
-        <member name="M:Cassandra.Requests.RequestExecution.HandleRequestError(Cassandra.Connections.IRequestError,Cassandra.Host)">
+        <member name="M:Cassandra.Requests.RequestExecution.HandleException(System.Exception)">
             <summary>
             Checks if the exception is either a Cassandra response error or a socket exception to retry or failover if necessary.
             </summary>
         </member>
-        <member name="M:Cassandra.Requests.RequestExecution.GetRetryDecisionWithReason(Cassandra.Connections.IRequestError,Cassandra.IExtendedRetryPolicy,Cassandra.IStatement,Cassandra.Configuration,System.Int32)">
+        <member name="M:Cassandra.Requests.RequestExecution.GetRetryDecision(System.Exception,Cassandra.IExtendedRetryPolicy,Cassandra.IStatement,Cassandra.Configuration,System.Int32)">
             <summary>
-            Gets the retry decision based on the request error
+            Gets the retry decision based on the exception from Cassandra
             </summary>
         </member>
-        <member name="M:Cassandra.Requests.RequestExecution.PrepareAndRetry(System.Byte[],Cassandra.Host)">
+        <member name="M:Cassandra.Requests.RequestExecution.PrepareAndRetry(System.Byte[])">
             <summary>
             Sends a prepare request before retrying the statement
             </summary>
         </member>
-        <member name="M:Cassandra.Requests.RequestExecution.ReprepareResponseHandler(Cassandra.Connections.IRequestError,Cassandra.Responses.Response,Cassandra.Host)">
+        <member name="M:Cassandra.Requests.RequestExecution.ReprepareResponseHandler(System.Exception,Cassandra.Responses.Response)">
             <summary>
             Handles the response of a (re)prepare request and retries to execute on the same connection
             </summary>
@@ -12011,7 +11129,7 @@
             Determines if when dequeuing, it will automatically fetch the following result pages.
             </summary>
         </member>
-        <member name="M:Cassandra.RowSet.SetFetchNextPageHandler(System.Func{System.Byte[],System.Threading.Tasks.Task{Cassandra.RowSet}},System.Int32,Cassandra.Metrics.Internal.IMetricsManager)">
+        <member name="M:Cassandra.RowSet.SetFetchNextPageHandler(System.Func{System.Byte[],System.Threading.Tasks.Task{Cassandra.RowSet}},System.Int32)">
             <summary>
             Sets the method that is called to get the next page.
             </summary>
@@ -12559,9 +11677,6 @@
         <member name="M:Cassandra.Session.Cassandra#SessionManagement#IInternalSession#GetPools">
             <inheritdoc />
         </member>
-        <member name="P:Cassandra.Session.Cassandra#SessionManagement#IInternalSession#ConnectedNodes">
-            <inheritdoc/>
-        </member>
         <member name="M:Cassandra.Session.Cassandra#SessionManagement#IInternalSession#GetExistingPool(System.Net.IPEndPoint)">
             <inheritdoc />
         </member>
@@ -12644,11 +11759,6 @@
         <member name="M:Cassandra.SessionManagement.IInternalSession.GetRequestOptions(System.String)">
             <summary>
             Fetches the request options that were mapped from the provided execution profile's name.
-            </summary>
-        </member>
-        <member name="P:Cassandra.SessionManagement.IInternalSession.ConnectedNodes">
-            <summary>
-            Returns the number of connected nodes.
             </summary>
         </member>
         <member name="T:Cassandra.SimpleAuthInfoProvider">
@@ -12814,11 +11924,6 @@
             Sets the keyspace of this <see cref="T:Cassandra.SimpleStatement"/> to be used as a hint for token-aware routing.
             </summary>
             <param name="name">The keyspace name</param>
-        </member>
-        <member name="T:Cassandra.SniOptions">
-            <summary>
-            This class contains properties related to the proxy when using SNI.
-            </summary>
         </member>
         <member name="T:Cassandra.SocketOptions">
             <summary>
@@ -13363,16 +12468,6 @@
             <exception cref="T:System.TimeoutException" />
             <exception cref="T:System.AggregateException" />
         </member>
-        <member name="M:Cassandra.Tasks.TaskHelper.WaitToCompleteWithMetrics(Cassandra.Metrics.Internal.IMetricsManager,System.Threading.Tasks.Task,System.Int32)">
-            <summary>
-            Increments session client timeout counter in case of timeout.
-            </summary>
-        </member>
-        <member name="M:Cassandra.Tasks.TaskHelper.WaitToCompleteWithMetrics``1(Cassandra.Metrics.Internal.IMetricsManager,System.Threading.Tasks.Task{``0},System.Int32)">
-            <summary>
-            Increments session client timeout counter in case of timeout.
-            </summary>
-        </member>
         <member name="M:Cassandra.Tasks.TaskHelper.WaitToComplete(System.Threading.Tasks.Task,System.Int32)">
             <summary>
             Waits the task to transition to RanToComplete.
@@ -13398,11 +12493,6 @@
             <exception cref="T:System.AggregateException" />
         </member>
         <member name="M:Cassandra.Tasks.TaskHelper.TrySet``1(System.Threading.Tasks.TaskCompletionSource{``0},System.Exception,``0)">
-            <summary>
-            Attempts to transition the underlying Task to RanToCompletion or Faulted state.
-            </summary>
-        </member>
-        <member name="M:Cassandra.Tasks.TaskHelper.TrySetRequestError``1(System.Threading.Tasks.TaskCompletionSource{``0},Cassandra.Connections.IRequestError,``0)">
             <summary>
             Attempts to transition the underlying Task to RanToCompletion or Faulted state.
             </summary>

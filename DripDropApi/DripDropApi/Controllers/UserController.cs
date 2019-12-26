@@ -12,6 +12,7 @@ namespace DripDropApi.Controllers
     public class UserController : ApiController
     {
         [HttpGet]
+        ///[Route("GetUserID")]
         public IHttpActionResult Get(string id)
         {
             User user = new User();
@@ -19,10 +20,34 @@ namespace DripDropApi.Controllers
             return Ok(user);
         }
 
+        [Route("GetByLogin")]
+        public IHttpActionResult GetByName(string name, string pass)
+        {
+            User user = new User();
+            user = CassandraDataProvider.GetUserByUsernameAndPassword(name , pass);
+            return Ok(user);
+        }
+
         [HttpPost]
         public IHttpActionResult Post([FromBody] User newUser)
         {
-            CassandraDataProvider.AddUser(newUser.username , newUser.nickname , newUser.password);
+            CassandraDataProvider.AddUser(newUser.username, newUser.nickname, newUser.password);
+            return Ok();
+        }
+
+        [HttpPut]
+        [Route("PutFriend")]
+        public IHttpActionResult PutFriend(string myId , string friendId)
+        {
+            CassandraDataProvider.AddUserFriendUID( myId , friendId);
+            return Ok();
+        }
+
+        [HttpPut]
+        [Route("PutServer")]
+        public IHttpActionResult PutServer(string myId, string serverId)
+        {
+            CassandraDataProvider.AddUserServerUID(myId, serverId);
             return Ok();
         }
 

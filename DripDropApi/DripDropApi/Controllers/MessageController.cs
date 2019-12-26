@@ -11,5 +11,6 @@ namespace DripDropApi.Controllers
 {
     public class MessageController : ApiController
     {
+
     }
 }

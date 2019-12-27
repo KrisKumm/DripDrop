@@ -48,7 +48,7 @@ namespace DripDropApi
                 users.Add(user);
             }
 
-            //session.Cluster.Shutdown();
+            session.Cluster.Shutdown();
 
             return users;
         }
@@ -63,7 +63,7 @@ namespace DripDropApi
 
             Row userData = session.Execute("select * from User where username='" + username + "'").FirstOrDefault();
 
-            UID = userData["userUID"] != null ? userData["userUID"].ToString() : string.Empty;
+            UID = userData["useruid"] != null ? userData["useruid"].ToString() : string.Empty;
 
             session.Cluster.Shutdown();
 
@@ -120,20 +120,20 @@ namespace DripDropApi
 
             if (userData != null)
             {
-                user.userUID = userData["userUID"] != null ? userData["userUID"].ToString() : string.Empty;
+                user.userUID = userData["useruid"] != null ? userData["useruid"].ToString() : string.Empty;
                 user.username = userData["username"] != null ? userData["username"].ToString() : string.Empty;
                 user.nickname = userData["nickname"] != null ? userData["nickname"].ToString() : string.Empty;
                 user.password = userData["password"] != null ? userData["password"].ToString() : string.Empty;
                 user.avatar = userData["avatar"] != null ? userData["avatar"].ToString() : string.Empty;
-                if (userData["serverUIDsList"] != null)
-                    foreach (var item in userData.GetColumn("serverUIDsList").ToString())
+                if (userData["serveruidslist"] != null)
+                    foreach (var item in userData.GetColumn("serveruidslist").ToString())
                     {
                         user.serverUIDsList.Add(item.ToString());
                     }
                 else
                     user.serverUIDsList.Add(string.Empty);
-                if (userData["friendUIDsList"] != null)
-                    foreach (var item in userData["friendUIDsList"].ToString())
+                if (userData["frienduidslist"] != null)
+                    foreach (var item in userData["frienduidslist"].ToString())
                     {
                         user.serverUIDsList.Add(item.ToString());
                     }
@@ -237,25 +237,25 @@ namespace DripDropApi
             foreach (var serverData in serversData)
             {
                 Server server = new Server();
-                server.serverUID = serverData["serverUID"] != null ? serverData["serverUID"].ToString() : string.Empty;
+                server.serverUID = serverData["serveruid"] != null ? serverData["serveruid"].ToString() : string.Empty;
                 server.name = serverData["name"] != null ? serverData["name"].ToString() : string.Empty;
                 server.password = serverData["password"] != null ? serverData["password"].ToString() : string.Empty;
-                if (serverData["userUIDsList"] != null)
-                    foreach (var item in serverData.GetColumn("userUIDsList").ToString())
+                if (serverData["useruidslist"] != null)
+                    foreach (var item in serverData.GetColumn("useruidslist").ToString())
                     {
                         server.userUIDsList.Add(item.ToString());
                     }
                 else
                     server.userUIDsList.Add(string.Empty);
-                if (serverData["adminUIDsList"] != null)
-                    foreach (var item in serverData["adminUIDsList"].ToString())
+                if (serverData["adminuidslist"] != null)
+                    foreach (var item in serverData["adminuidslist"].ToString())
                     {
                         server.adminUIDsList.Add(item.ToString());
                     }
                 else
                     server.adminUIDsList.Add(string.Empty);
-                server.privateS = serverData["privateS"] != null ? (Boolean)serverData["privateS"] : false;
-                server.creationTime = serverData["creationTime"] != null ? (DateTime)serverData["creationTime"] : DateTime.Now;
+                server.privateS = serverData["privates"] != null ? (Boolean)serverData["privates"] : false;
+                server.creationTime = serverData["creationtime"] != null ? (DateTime)serverData["creationtime"] : DateTime.Now;
                 servers.Add(server);
             }
 
@@ -274,7 +274,7 @@ namespace DripDropApi
 
             Row serverData = session.Execute("select * from Server where username='" + name + "'").FirstOrDefault();
 
-            UID = serverData["serverUID"] != null ? serverData["serverUID"].ToString() : string.Empty;
+            UID = serverData["serveruid"] != null ? serverData["serveruid"].ToString() : string.Empty;
 
             session.Cluster.Shutdown();
 
@@ -293,25 +293,25 @@ namespace DripDropApi
 
             if (serverData != null)
             {
-                server.serverUID = serverData["serverUID"] != null ? serverData["serverUID"].ToString() : string.Empty;
+                server.serverUID = serverData["serveruid"] != null ? serverData["serveruid"].ToString() : string.Empty;
                 server.name = serverData["name"] != null ? serverData["name"].ToString() : string.Empty;
                 server.password = serverData["password"] != null ? serverData["password"].ToString() : string.Empty;
-                if (serverData["userUIDsList"] != null)
-                    foreach (var item in serverData.GetColumn("userUIDsList").ToString())
+                if (serverData["useruidslist"] != null)
+                    foreach (var item in serverData.GetColumn("useruidslist").ToString())
                     {
                         server.userUIDsList.Add(item.ToString());
                     }
                 else
                     server.userUIDsList.Add(string.Empty);
-                if (serverData["adminUIDsList"] != null)
-                    foreach (var item in serverData["adminUIDsList"].ToString())
+                if (serverData["adminuidslist"] != null)
+                    foreach (var item in serverData["adminuidslist"].ToString())
                     {
                         server.adminUIDsList.Add(item.ToString());
                     }
                 else
                     server.adminUIDsList.Add(string.Empty);
-                server.privateS = serverData["privateS"] != null ? (Boolean)serverData["privateS"] : false;
-                server.creationTime = serverData["creationTime"] != null ? (DateTime)serverData["creationTime"] : DateTime.Now;
+                server.privateS = serverData["privates"] != null ? (Boolean)serverData["privates"] : false;
+                server.creationTime = serverData["creationtime"] != null ? (DateTime)serverData["creationtime"] : DateTime.Now;
             }
 
             session.Cluster.Shutdown();
@@ -411,17 +411,17 @@ namespace DripDropApi
             foreach (var chatData in chatsData)
             {
                 Chat chat = new Chat();
-                chat.chatUID = chatData["chatUID"] != null ? chatData["chatUID"].ToString() : string.Empty;
+                chat.chatUID = chatData["chatuid"] != null ? chatData["chatuid"].ToString() : string.Empty;
                 chat.name = chatData["name"] != null ? chatData["name"].ToString() : string.Empty;
-                if (chatData["userUIDsList"] != null)
-                    foreach (var item in chatData.GetColumn("userUIDsList").ToString())
+                if (chatData["useruidslist"] != null)
+                    foreach (var item in chatData.GetColumn("useruidslist").ToString())
                     {
                         chat.userUIDsList.Add(item.ToString());
                     }
                 else
                     chat.userUIDsList.Add(string.Empty);
-                chat.creationTime = chatData["creationTime"] != null ? (DateTime)chatData["creationTime"] : DateTime.Now;
-                chat.serverUID = chatData["serverUID"] != null ? chatData["serverUID"].ToString() : string.Empty;
+                chat.creationTime = chatData["creationtime"] != null ? (DateTime)chatData["creationtime"] : DateTime.Now;
+                chat.serverUID = chatData["serveruid"] != null ? chatData["serveruid"].ToString() : string.Empty;
                 chats.Add(chat);
             }
 
@@ -443,17 +443,17 @@ namespace DripDropApi
             foreach (var chatData in chatsData)
             {
                 Chat chat = new Chat();
-                chat.chatUID = chatData["chatUID"] != null ? chatData["chatUID"].ToString() : string.Empty;
+                chat.chatUID = chatData["chatuid"] != null ? chatData["chatuid"].ToString() : string.Empty;
                 chat.name = chatData["name"] != null ? chatData["name"].ToString() : string.Empty;
-                if (chatData["userUIDsList"] != null)
-                    foreach (var item in chatData.GetColumn("userUIDsList").ToString())
+                if (chatData["useruidslist"] != null)
+                    foreach (var item in chatData.GetColumn("useruidslist").ToString())
                     {
                         chat.userUIDsList.Add(item.ToString());
                     }
                 else
                     chat.userUIDsList.Add(string.Empty);
-                chat.creationTime = chatData["creationTime"] != null ? (DateTime)chatData["creationTime"] : DateTime.Now;
-                chat.serverUID = chatData["serverUID"] != null ? chatData["serverUID"].ToString() : string.Empty;
+                chat.creationTime = chatData["creationtime"] != null ? (DateTime)chatData["creationtime"] : DateTime.Now;
+                chat.serverUID = chatData["serveruid"] != null ? chatData["serveruid"].ToString() : string.Empty;
                 chats.Add(chat);
             }
 
@@ -472,7 +472,7 @@ namespace DripDropApi
 
             Row chatData = session.Execute("select * from Chat where name='" + name + "'").FirstOrDefault();
 
-            UID = chatData["chatUID"] != null ? chatData["chatUID"].ToString() : string.Empty;
+            UID = chatData["chatuid"] != null ? chatData["chatuid"].ToString() : string.Empty;
 
             session.Cluster.Shutdown();
 
@@ -491,17 +491,17 @@ namespace DripDropApi
 
             if (chatData != null)
             {
-                chat.chatUID = chatData["chatUID"] != null ? chatData["chatUID"].ToString() : string.Empty;
+                chat.chatUID = chatData["chatuid"] != null ? chatData["chatuid"].ToString() : string.Empty;
                 chat.name = chatData["name"] != null ? chatData["name"].ToString() : string.Empty;
-                if (chatData["userUIDsList"] != null)
-                    foreach (var item in chatData.GetColumn("userUIDsList").ToString())
+                if (chatData["useruidslist"] != null)
+                    foreach (var item in chatData.GetColumn("useruidslist").ToString())
                     {
                         chat.userUIDsList.Add(item.ToString());
                     }
                 else
                     chat.userUIDsList.Add(string.Empty);
-                chat.creationTime = chatData["creationTime"] != null ? (DateTime)chatData["creationTime"] : DateTime.Now;
-                chat.serverUID = chatData["serverUID"] != null ? chatData["serverUID"].ToString() : string.Empty;
+                chat.creationTime = chatData["creationtime"] != null ? (DateTime)chatData["creationtime"] : DateTime.Now;
+                chat.serverUID = chatData["serveruid"] != null ? chatData["serveruid"].ToString() : string.Empty;
             }
 
             session.Cluster.Shutdown();
@@ -575,13 +575,13 @@ namespace DripDropApi
             foreach (var messageData in messagesData)
             {
                 Message message = new Message();
-                message.messageUID = messageData["messageUID"] != null ? messageData["messageUID"].ToString() : string.Empty;
-                message.fromWho = messageData["fromWho"] != null ? messageData["fromWho"].ToString() : string.Empty;
-                message.timeSent = messageData["timeSent"] != null ? (DateTime)messageData["timeSent"] : DateTime.Now;
-                message.timeRead = messageData["timeRead"] != null ? (DateTime)messageData["timeRead"] : DateTime.Now;
+                message.messageUID = messageData["messageuid"] != null ? messageData["messageuid"].ToString() : string.Empty;
+                message.fromWho = messageData["fromwho"] != null ? messageData["fromwho"].ToString() : string.Empty;
+                message.timeSent = messageData["timesent"] != null ? (DateTime)messageData["timesent"] : DateTime.Now;
+                message.timeRead = messageData["timeread"] != null ? (DateTime)messageData["timeread"] : DateTime.Now;
                 message.text = messageData["text"] != null ? messageData["text"].ToString() : string.Empty;
                 message.picture = messageData["picture"] != null ? messageData["picture"].ToString() : string.Empty;
-                message.chatUID = messageData["chatUID"] != null ? messageData["chatUID"].ToString() : string.Empty;
+                message.chatUID = messageData["chatuid"] != null ? messageData["chatuid"].ToString() : string.Empty;
                 messages.Add(message);
             }
 
@@ -603,13 +603,13 @@ namespace DripDropApi
             foreach (var messageData in messagesData)
             {
                 Message message = new Message();
-                message.messageUID = messageData["messageUID"] != null ? messageData["messageUID"].ToString() : string.Empty;
-                message.fromWho = messageData["fromWho"] != null ? messageData["fromWho"].ToString() : string.Empty;
-                message.timeSent = messageData["timeSent"] != null ? (DateTime)messageData["timeSent"] : DateTime.Now;
-                message.timeRead = messageData["timeRead"] != null ? (DateTime)messageData["timeRead"] : DateTime.Now;
+                message.messageUID = messageData["messageuid"] != null ? messageData["messageuid"].ToString() : string.Empty;
+                message.fromWho = messageData["fromwho"] != null ? messageData["fromwho"].ToString() : string.Empty;
+                message.timeSent = messageData["timesent"] != null ? (DateTime)messageData["timesent"] : DateTime.Now;
+                message.timeRead = messageData["timeread"] != null ? (DateTime)messageData["timeread"] : DateTime.Now;
                 message.text = messageData["text"] != null ? messageData["text"].ToString() : string.Empty;
                 message.picture = messageData["picture"] != null ? messageData["picture"].ToString() : string.Empty;
-                message.chatUID = messageData["chatUID"] != null ? messageData["chatUID"].ToString() : string.Empty;
+                message.chatUID = messageData["chatuid"] != null ? messageData["chatuid"].ToString() : string.Empty;
                 messages.Add(message);
             }
 
@@ -628,7 +628,7 @@ namespace DripDropApi
 
             Row messagesData = session.Execute("select * from Message where fromWho='" + fromWho + "' and chatUID='" + chatUID + "'").FirstOrDefault();
 
-            UID = messagesData["messageUID"] != null ? messagesData["messageUID"].ToString() : string.Empty;
+            UID = messagesData["messageuid"] != null ? messagesData["messageuid"].ToString() : string.Empty;
 
             session.Cluster.Shutdown();
 
@@ -647,13 +647,13 @@ namespace DripDropApi
 
             if (messageData != null)
             {
-                message.messageUID = messageData["messageUID"] != null ? messageData["messageUID"].ToString() : string.Empty;
-                message.fromWho = messageData["fromWho"] != null ? messageData["fromWho"].ToString() : string.Empty;
-                message.timeSent = messageData["timeSent"] != null ? (DateTime)messageData["timeSent"] : DateTime.Now;
-                message.timeRead = messageData["timeRead"] != null ? (DateTime)messageData["timeRead"] : DateTime.Now;
+                message.messageUID = messageData["messageuid"] != null ? messageData["messageuid"].ToString() : string.Empty;
+                message.fromWho = messageData["fromwho"] != null ? messageData["fromwho"].ToString() : string.Empty;
+                message.timeSent = messageData["timesent"] != null ? (DateTime)messageData["timesent"] : DateTime.Now;
+                message.timeRead = messageData["timeread"] != null ? (DateTime)messageData["timeread"] : DateTime.Now;
                 message.text = messageData["text"] != null ? messageData["text"].ToString() : string.Empty;
                 message.picture = messageData["picture"] != null ? messageData["picture"].ToString() : string.Empty;
-                message.chatUID = messageData["chatUID"] != null ? messageData["chatUID"].ToString() : string.Empty;
+                message.chatUID = messageData["chatuid"] != null ? messageData["chatuid"].ToString() : string.Empty;
             }
 
             session.Cluster.Shutdown();

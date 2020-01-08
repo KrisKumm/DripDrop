@@ -11,6 +11,35 @@ namespace DripDropApi.Controllers
 {
     public class ChatController : ApiController
     {
+        [HttpGet]
+        ///[Route("GetUserID")]
+        public IHttpActionResult Get(string id)
+        {
+            Chat chat = new Chat();
+            chat = CassandraDataProvider.GetChatByID(id);
+            return Ok(chat);
+        }
 
+        [HttpPost]
+        public IHttpActionResult Post([FromBody] Chat chat)
+        {
+            CassandraDataProvider.AddChat(chat.name , chat.serverUID);
+            return Ok();
+        }
+
+        [HttpPut]
+        [Route("PutServerId")]
+        public IHttpActionResult PutFriend(string chatId, string chaterId)
+        {
+            CassandraDataProvider.AddChatUserUID(chatId, chaterId);
+            return Ok();
+        }
+
+        [HttpDelete]
+        public IHttpActionResult Delete(string id)
+        {
+            CassandraDataProvider.DeleteChatByUID(id);
+            return Ok();
+        }
     }
 }

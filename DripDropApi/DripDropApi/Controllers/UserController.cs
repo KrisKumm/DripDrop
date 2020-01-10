@@ -28,6 +28,23 @@ namespace DripDropApi.Controllers
             return Ok(user);
         }
 
+        [Route("api/User/{username}/{password}")]
+        public IHttpActionResult Get(string username, string password)
+        {
+            User user = new User();
+            user = CassandraDataProvider.GetUserByUsernameAndPassword(username, password);
+            return Ok(user);
+        }
+
+        [Route("GetByNamenn")]
+        public IHttpActionResult GetByNamenn(string namenn)
+        {
+            string uid;
+            string trimmed = namenn.Substring(1, namenn.Length - 2);
+            uid = CassandraDataProvider.GetUserUIDByUsername(namenn);
+            return Ok(uid);
+        }
+
         [HttpPost]
         public IHttpActionResult Post([FromBody] User newUser)
         {

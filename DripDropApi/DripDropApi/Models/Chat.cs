@@ -11,7 +11,7 @@ namespace DripDropApi.Models
     {
         public string chatUID { get; set; }
         public string name { get; set; }
-        public List<string> userUIDsList { get; set; }
+        public IEnumerable<string> userUIDsList { get; set; }
         public DateTime creationTime { get; set; }
         public string serverUID { get; set; }
         public Chat()

@@ -12,9 +12,8 @@ CREATE TABLE User (
 	username text,
 	nickname text,
 	password text,
-	avatar text,
-	serverUIDsList list<text>,
-	friendUIDsList list<text>,
+	serverUIDsList frozen<list<text>>,
+	friendUIDsList frozen<list<text>>,
 	PRIMARY KEY (userUID)
 )
 WITH
@@ -26,8 +25,9 @@ CREATE TABLE Server (
 	serverUID uuid,
 	name text,
 	password text,
-	userUIDsList list<text>,
-	adminUIDsList list<text>,
+	userUIDsList frozen<list<text>>,
+	adminUIDsList frozen<list<text>>,
+	chatUIDsList frozen<list<text>>,
 	privateS boolean,
 	creationTime timeuuid,
 	PRIMARY KEY (serverUID)
@@ -40,7 +40,7 @@ WITH
 CREATE TABLE Chat (
 	chatUID uuid,
 	name text,
-	userUIDsList list<text>,
+	userUIDsList frozen<list<text>>,
 	creationTime timeuuid,
 	serverUID text,
 	PRIMARY KEY (chatUID)
@@ -68,14 +68,14 @@ WITH
 2. CQL Insert Start Data
 
 User:
-INSERT INTO User (userUID, username, nickname, password, avatar, serverUIDsList, friendUIDsList) values (uuid(), 'Kristijan', 'Kris', 'kilic', '', ['1', '2', '3'], ['2', '3']);
-INSERT INTO User (userUID, username, nickname, password, avatar, serverUIDsList, friendUIDsList) values (uuid(), 'Milos', 'Miske', 'mstoiljkovic', '', ['2', '3'], ['1', '3']);
-INSERT INTO User (userUID, username, nickname, password, avatar, serverUIDsList, friendUIDsList) values (uuid(), 'Julija', 'Jucili', 'jpancic', '', ['1', '3'], ['1', '2']);
+INSERT INTO User (userUID, username, nickname, password, serverUIDsList, friendUIDsList) values (uuid(), 'Kristijan', 'Kris', 'kilic', ['1', '2', '3'], ['2', '3']);
+INSERT INTO User (userUID, username, nickname, password, serverUIDsList, friendUIDsList) values (uuid(), 'Milos', 'Miske', 'mstoiljkovic', ['2', '3'], ['1', '3']);
+INSERT INTO User (userUID, username, nickname, password, serverUIDsList, friendUIDsList) values (uuid(), 'Julija', 'Jucili', 'jpancic', ['1', '3'], ['1', '2']);
 
 Server:
-INSERT INTO Server (serverUID, name, password, userUIDsList, adminUIDsList, privateS, creationTime) values (uuid(), 'server1', 's1s1', ['1', '2'], ['1'], false, now());
-INSERT INTO Server (serverUID, name, password, userUIDsList, adminUIDsList, privateS, creationTime) values (uuid(), 'server2', 's2s2', ['1', '3'], ['2'], true, now());
-INSERT INTO Server (serverUID, name, password, userUIDsList, adminUIDsList, privateS, creationTime) values (uuid(), 'server3', 's3s3', ['1', '2', '3'], ['3'], false, now());
+INSERT INTO Server (serverUID, name, password, userUIDsList, adminUIDsList, chatUIDsList, privateS, creationTime) values (uuid(), 'server1', 's1s1', ['1', '2'], ['1'], [], false, now());
+INSERT INTO Server (serverUID, name, password, userUIDsList, adminUIDsList, chatUIDsList, privateS, creationTime) values (uuid(), 'server2', 's2s2', ['1', '3'], ['2'], [], true, now());
+INSERT INTO Server (serverUID, name, password, userUIDsList, adminUIDsList, chatUIDsList, privateS, creationTime) values (uuid(), 'server3', 's3s3', ['1', '2', '3'], ['3'], [], false, now());
 
 Chat:
 INSERT INTO Chat (chatUID, name, userUIDsList, creationTime, serverUID) values (uuid(), 'chat1', ['1', '2'], now(), '1');
@@ -133,6 +133,7 @@ GetServerByID(string serverUID)
 AddServer(string name, string password, bool privateS)
 AddServerUserUID(string serverUID, string userUID)
 AddServerAdminUID(string serverUID, string adminUID)
+AddServerChatUID(string serverUID, string chatUID)
 AddServerPrivate(string serverUID, bool privateS)
 DeleteServerByName(string name)
 DeleteServerByUID(string serverUID)

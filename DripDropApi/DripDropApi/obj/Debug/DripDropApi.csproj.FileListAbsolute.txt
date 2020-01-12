@@ -535,3 +535,8 @@ C:\Users\miske\Documents\DripDrop\DripDropApi\DripDropApi\bin\System.ValueTuple.
 C:\Users\miske\Documents\DripDrop\DripDropApi\DripDropApi\bin\System.Web.Cors.dll
 C:\Users\miske\Documents\DripDrop\DripDropApi\DripDropApi\bin\System.Web.Http.Cors.dll
 C:\Users\miske\Documents\DripDrop\DripDropApi\DripDropApi\bin\System.Web.Http.Cors.xml
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\System.Web.Cors.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\System.Web.Http.Cors.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\System.Web.Http.Cors.xml
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\Dse.dll
+D:\ELFAK\IV godina\VII Semestar\Napredne Baze Podataka\Cassandra\DripDropRepo\DripDrop\DripDropApi\DripDropApi\bin\Dse.xml

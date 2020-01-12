@@ -1,0 +1,28 @@
+
+.add-frend{
+    margin: auto;
+    align-items: center;
+    text-align: center;
+}
+
+.add-frend p{
+    font-size: 36px;
+    font-style: oblique;
+    color: rgb(0, 0, 43);
+}
+
+.add-frend input{
+    border-radius: 3px ;
+}
+
+.frend-search{
+    
+}
+.add-frend-con{
+    height: 0;
+    overflow: hidden;
+}
+.add-frend-con.open{
+    height: 50px;
+    transition: height 0.3s ease-out;
+}

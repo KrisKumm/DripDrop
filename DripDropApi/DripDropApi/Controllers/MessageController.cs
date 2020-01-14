@@ -18,7 +18,13 @@ namespace DripDropApi.Controllers
             return Ok(message);
         }
 
-
+        [Route("GetMessages")]
+        public IHttpActionResult GetMessage( string time , string chatId)
+        {
+            List<Message> messages = CassandraDataProvider.GetMessagesByDateTime(time, chatId);
+            messages.Reverse();
+            return Ok<List<Message>>(messages);
+        }
         [HttpPost]
         public IHttpActionResult Post([FromBody] Message message)
         {

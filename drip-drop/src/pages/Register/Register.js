@@ -26,7 +26,18 @@ class Register extends Component {
         this.setState({ picture : event.target.value} );
     }
     Register = () => {
-
+        fetch(`http://localhost:32345/api/User/`, {
+            method: 'POST',
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              username : this.state.name,
+              password : this.state.pass,
+              nickname : this.state.picture,
+            })
+          })
     }
    
    

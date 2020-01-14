@@ -18,13 +18,12 @@
 
     box-shadow: 0 3px #ccc;
     border-radius: 5px;
-    background: #641c63;
     flex-grow: 1;
 
 }
 
 .chatlogs{
-    padding: 10px;
+    padding-left: 80px;
     width: 100%;
     flex-grow: 1;
     background: #eee;

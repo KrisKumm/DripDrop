@@ -24,7 +24,10 @@ namespace DripDropApi.Controllers
         public IHttpActionResult Post([FromBody] Chat chat)
         {
             CassandraDataProvider.AddChat(chat.name , chat.serverUID);
-            return Ok();
+            string chatUID = CassandraDataProvider.GetChatUIDByName(chat.name);
+            CassandraDataProvider.AddServerChatUID(chat.serverUID, chatUID);
+            Chat c = CassandraDataProvider.GetChatByID(chatUID);
+            return Ok(c);
         }
 
         [HttpPut]

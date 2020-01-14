@@ -12,9 +12,9 @@ namespace DripDropApi.Models
         public string serverUID { get; set; }
         public string name { get; set; }
         public string password { get; set; }
-        public IEnumerable<string> userUIDsList { get; set; }
-        public IEnumerable<string> adminUIDsList { get; set; }
-        public IEnumerable<string> chatUIDsList { get; set; }
+        public List<string> userUIDsList { get; set; }
+        public List<string> adminUIDsList { get; set; }
+        public List<string> chatUIDsList { get; set; }
         public Boolean privateS { get; set; }
         public DateTime creationTime { get; set; }
         public Server()

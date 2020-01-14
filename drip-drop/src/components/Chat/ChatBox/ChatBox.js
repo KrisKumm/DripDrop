@@ -9,7 +9,7 @@ class chatBox extends Component{
 
     componentDidMount() {
 
-        
+        this.message = '';
         // setInterval( () => {
 
         //     if (this.props.chatUser !== undefined && this.props.chat[0] !== undefined) {
@@ -35,7 +35,10 @@ class chatBox extends Component{
         console.log(this.message);
     }
     sendHandler = () => {
-       
+        console.log(this.props.chat);
+        if(this.message !== ''){
+
+        
         fetch(`http://localhost:32345/api/Message/`, {
           method: 'POST',
           headers: {
@@ -46,23 +49,29 @@ class chatBox extends Component{
             text: this.message,
             fromWho : this.props.user.id,
             picture : null,
-            chatUID : this.props.chat.id
+            chatUID : this.props.chatData.chatUID
           })
         })
+    
+        this.props.chatChange( { text: this.message,
+            fromWho : this.props.user.id,
+            picture : null,
+            chatUID : this.props.chatData.chatUID});
+        }
         //this.props.updateChat( parseInt(`${Today.getHours()}${Today.getMinutes()}`),this.props.chat[this.props.chat.length-1].id,this.props.user.id, this.props.chatUser.id)
     }
     render(){ 
 
         if(this.props.sent){
-            console.log(this.props.chat[0].id, "chat id");
+            //console.log(this.props.chat[0].id, "chat id");
             //this.props.updateChat(this.props.chat[this.props.chat.length-1].id,this.props.user.id, this.props.chatUser.id);
         }
         
         let message = this.props.chat.map( poruka =>{
-            if(poruka.from !== this.props.user.id){
-                return (<ChatMsg  person="chat friend" message={poruka.message} url={this.props.chatUser.userPic} key={poruka.id}/>);
+            if(poruka.fromWho !== this.props.user.id){
+                return (<ChatMsg  person="chat friend" message={poruka.text} url={this.props.chatUser.userPic} key={poruka.messageUID}/>);
             }else{
-                return (<ChatMsg  person="chat self" message={poruka.message} url={this.props.user.userPic} key={poruka.id}/>);
+                return (<ChatMsg  person="chat self" message={poruka.text} url={this.props.user.userPic} key={poruka.messageUID}/>);
             }
         });
         return(

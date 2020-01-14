@@ -24,7 +24,12 @@ namespace DripDropApi.Controllers
         public IHttpActionResult Post([FromBody] Server server)
         {
             CassandraDataProvider.AddServer(server.name, server.password, server.privateS);
-            return Ok();
+
+            string sUid = CassandraDataProvider.GetServerUIDByName(server.name);
+            CassandraDataProvider.AddServerAdminUID(sUid, server.serverUID);
+            CassandraDataProvider.AddUserServerUID(server.serverUID, sUid);
+            Server s = CassandraDataProvider.GetServerByID(sUid);
+            return Ok(s);
         }
 
         [HttpPut]

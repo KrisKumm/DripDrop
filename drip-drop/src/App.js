@@ -27,8 +27,8 @@ class App extends Component {
     .then( res => res.json())
     .then ( user => {
       console.log(user);
-      if(!user.username){
-        this.user = { id: user.useruid, name: user.username , servers: user.serveruidslist , frends: user.frienduidslist , avatar: user.avatar, nick: user.nickname};
+      if(user.username !== null){
+        this.user = { id: user.userUID, name: user.username , servers: user.serverUIDsList , frends: user.friendUIDsList , avatar: user.nickname, nick: user.nickname};
         console.log('muda')
         resolve(true);
       }else{ resolve(false)}

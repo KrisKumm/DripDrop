@@ -1,5 +1,7 @@
 
 .add-frend{
+    height: 100%;
+    width: 100%;
     margin: auto;
     align-items: center;
     text-align: center;
@@ -16,13 +18,26 @@
 }
 
 .frend-search{
-    
+    margin-top: 18px;
+    height: 100%;
+    width: 90%;
+}
+.frend-search>div{
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+.frend-search>div>p{
+    margin-top: 18px;
+    margin-left: 10px;
+    font-size: 24px;
 }
 .add-frend-con{
     height: 0;
     overflow: hidden;
 }
 .add-frend-con.open{
-    height: 50px;
+    height: 100%;
+    width: 100%;
     transition: height 0.3s ease-out;
 }

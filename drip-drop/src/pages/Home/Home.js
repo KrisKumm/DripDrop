@@ -15,13 +15,13 @@ class Home extends Component {
     serversListOpen: false,
     addChatsListOpen: false,
     frendList : [   
-    {name: "miske"},
-    {name: "ivan"},
-    {name: "JOca"}
+    // {name: "miske"},
+    // {name: "ivan"},
+    // {name: "JOca"}
   ],
   serversList: [
-    {name : "fagets"},
-    {name : "jeb se"}
+    // {name : "fagets"},
+    // {name : "jeb se"}
   ],
   chatU : {
     id : "ziva",
@@ -35,28 +35,13 @@ class Home extends Component {
     {from : "miske", message: "jeb se", id: 1},
     {from : "ziva", message: "i ti", id: 2},
   ],
-  server: { chats: [{name : "muda"}]},
+  server: { chatUIDsList: [] , serverUID: 0},
+  chats: [],
   result: [],
+  messages: [],
  };
 
-  componentDidMount() {
-
-    this.props.user.frends.forEach( frend => {
-
-        fetch(`http://localhost:32345/api/User/${frend.id}`)
-        .then(res => res.json())
-        .then(frend => this.setState(prevState => { return { frendList : [...prevState.frendList , 
-          { name: frend.username , avatar: frend.avatar, nick: frend.nickname , id: frend.useruid}]} }));
-    });
-
-    this.props.user.servers.forEach( server => {
-
-        fetch(`http://localhost:32345/api/Server/${server.id}`)
-        .then(res => res.json())
-        .then(server => this.setState(prevState => { return { serversList : [...prevState.serversList, 
-          {...server , id: server.serveruid}]} }));
-    });
-  }
+  
   frendsToggleOpen = () => {
     this.setState((prevState) => {
       return {frendListOpen: !prevState.frendListOpen};
@@ -92,15 +77,58 @@ class Home extends Component {
 
   serverClick = (serverr) => {
      this.setState(prevState => { return { server : serverr} });
+     this.setState(prevState => { return { chats : []} });
+     serverr.chatUIDsList.forEach( chat => {
+
+      fetch(`http://localhost:32345/api/Chat/${chat}`)
+      .then(res => res.json())
+      .then(chatt => this.setState(prevState => { return { chats : [...prevState.chats , 
+        { ...chatt, name: chatt.name , id: chatt.chatUID}]} }));
+  });
   };
   
   chatClick = (chat) => {
-    fetch(`http://localhost:32345/api/Chat/${chat.id}`)
-    .then(res => res.json())
-    .then(newChat => this.setState(prevState => { return { chat : newChat} }));
-  };
-  
+    this.setState(prevState => { return   { chat : chat}})
+    const date = new Date();
+    const hours = date.getMinutes() / 10 < 1 ? `0${date.getMinutes()}` :  date.getMinutes();
+    const chatDate = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()} ${date.getHours()}:${hours}:${date.getSeconds()}.${date.getMilliseconds()}`;
 
+    fetch(`http://localhost:32345/GetMessages?time=${chatDate}&chatId=${chat.id}`)
+    .then(res => res.json())
+    .then(newMessages => this.setState(prevState => { return  newMessages[0] !== null ? { messages : [...newMessages]} : null}));
+  };
+
+  AddChatHandler = () => {
+    
+    fetch(`http://localhost:32345/api/Chat/`, {
+            method: 'POST',
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              name : this.chatName,
+              serverUID : this.state.server.serverUID,
+            })
+          }).then( res => res.json())
+          .then(chat => this.setState(prevState => { return { chats : [...prevState.chats, chat]} }))
+  }
+  chatNameHandler = (event) => {
+    this.chatName = event.target.value;
+  }
+  messageAdd = (message) => {
+    this.setState(prevState => { return   { messages : [message ,...prevState.messages ]}})
+  }
+  addFrendToServ = (frend) => {
+    fetch(`http://localhost:32345/PutServer?myId=${frend.id}&serverId=${this.state.server.serverUID}`, {
+      method: 'PUT',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({})
+    })
+  }
   render() {
     let backdrop;
 
@@ -110,19 +138,19 @@ class Home extends Component {
     return (
       <div style={{height: '100%'}}>
         <Toolbar  drawerClickHandler={this.drawerToggleClickHandler} />
-        <SideDrawer drag={() => console.log('oprem')} click={this.itemClick} sClick={this.serverClick} fToggle={this.frendsToggleOpen} sToggle={this.serversToggleOpen} toggleF={this.state.frendListOpen}
+        <SideDrawer drag={this.addFrendToServ} click={this.itemClick} sClick={this.serverClick} fToggle={this.frendsToggleOpen} sToggle={this.serversToggleOpen} toggleF={this.state.frendListOpen}
         toggleS={this.state.serversListOpen} frends={this.state.frendList} servers={this.state.serversList}
-        show={this.state.sideDrawerOpen} user={this.state.user}  />
+        show={this.state.sideDrawerOpen} user={this.props.user} />
         {backdrop}
         <main style={{marginTop: '56px' }}>
         <div style={{flexGrow : "1" }}>
-          <div style={ this.state.server.chats.length === 0 ? {display: 'none'} : {minWidth: '235px', marginTop: "35px"} }>
-            <ItemList  clickHandler={this.chatClick} avatar={false} list={this.state.server.chats}  name="Chats"  expand={() => 0} show={true}>
-              <Add show={this.state.addChatsListOpen} click={this.chatsToggleOpen}/>
+          <div style={ this.state.server.chatUIDsList.length === 0 ? {display: 'none'} : {minWidth: '235px', marginTop: "35px"} }>
+            <ItemList  clickHandler={this.chatClick} avatar={false} list={this.state.chats}  name="Chats"  expand={() => 0} show={true}>
+              <Add add={this.AddChatHandler} change={this.chatNameHandler} show={this.state.addChatsListOpen} click={this.chatsToggleOpen}/>
             </ItemList>
           </div>
         </div>
-        <ChatBox user={this.state.user} chatUser={this.state.chatU} chat={this.state.chat} ></ChatBox>
+        <ChatBox chatChange={this.messageAdd}chatData={this.state.chat} user={this.props.user} chatUser={this.state.chatU} chat={this.state.messages} ></ChatBox>
         <div style={{flexGrow : "1"}}></div>
         </main>
         

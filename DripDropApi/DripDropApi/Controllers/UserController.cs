@@ -35,7 +35,12 @@ namespace DripDropApi.Controllers
             user = CassandraDataProvider.GetUserByUsernameAndPassword(username, password);
             return Ok(user);
         }
-
+        [Route("SearchByName")]
+        public IHttpActionResult GetNames(string name)
+        {
+            List<User> users = CassandraDataProvider.GetUsersByName(name);
+            return Ok(users);
+        }
         [Route("GetByNamenn")]
         public IHttpActionResult GetByNamenn(string namenn)
         {
@@ -64,6 +69,7 @@ namespace DripDropApi.Controllers
         [Route("PutServer")]
         public IHttpActionResult PutServer(string myId, string serverId)
         {
+            if(serverId != "0")
             CassandraDataProvider.AddUserServerUID(myId, serverId);
             return Ok();
         }

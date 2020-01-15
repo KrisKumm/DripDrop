@@ -29,7 +29,7 @@ class App extends Component {
       console.log(user);
       if(user.username !== null){
         this.user = { id: user.userUID, name: user.username , servers: user.serverUIDsList , frends: user.friendUIDsList , avatar: user.nickname, nick: user.nickname};
-        console.log('muda')
+        console.log('Done')
         resolve(true);
       }else{ resolve(false)}
     })
